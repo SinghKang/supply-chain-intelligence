@@ -1,0 +1,131 @@
+[2026-05-16T12:35:14.005+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: supply_chain_pipeline.kafka_consumer manual__2026-05-16T12:33:30.431294+00:00 [queued]>
+[2026-05-16T12:35:14.011+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: supply_chain_pipeline.kafka_consumer manual__2026-05-16T12:33:30.431294+00:00 [queued]>
+[2026-05-16T12:35:14.012+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2026-05-16T12:35:14.021+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): kafka_consumer> on 2026-05-16 12:33:30.431294+00:00
+[2026-05-16T12:35:14.024+0000] {standard_task_runner.py:60} INFO - Started process 223 to run task
+[2026-05-16T12:35:14.026+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'supply_chain_pipeline', 'kafka_consumer', 'manual__2026-05-16T12:33:30.431294+00:00', '--job-id', '48', '--raw', '--subdir', 'DAGS_FOLDER/supply_chain_pipeline.py', '--cfg-path', '/tmp/tmpjoxg8uzu']
+[2026-05-16T12:35:14.028+0000] {standard_task_runner.py:88} INFO - Job 48: Subtask kafka_consumer
+[2026-05-16T12:35:14.064+0000] {task_command.py:423} INFO - Running <TaskInstance: supply_chain_pipeline.kafka_consumer manual__2026-05-16T12:33:30.431294+00:00 [running]> on host 77266b8302bc
+[2026-05-16T12:35:14.119+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='lovepreet' AIRFLOW_CTX_DAG_ID='supply_chain_pipeline' AIRFLOW_CTX_TASK_ID='kafka_consumer' AIRFLOW_CTX_EXECUTION_DATE='2026-05-16T12:33:30.431294+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-16T12:33:30.431294+00:00'
+[2026-05-16T12:35:14.120+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-05-16T12:35:14.121+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /opt/airflow/ingestion/kafka_consumer.py']
+[2026-05-16T12:35:14.126+0000] {subprocess.py:86} INFO - Output:
+[2026-05-16T12:35:29.423+0000] {subprocess.py:93} INFO - Starting consumer...
+[2026-05-16T12:35:29.426+0000] {subprocess.py:93} INFO - Topic: shipment-events
+[2026-05-16T12:35:29.426+0000] {subprocess.py:93} INFO - Writing to: MinIO Bronze bucket
+[2026-05-16T12:35:29.427+0000] {subprocess.py:93} INFO - 
+[2026-05-16T12:35:29.427+0000] {subprocess.py:93} INFO - Consumed: Order 1651 | Phone | IN_TRANSIT
+[2026-05-16T12:35:29.428+0000] {subprocess.py:93} INFO - Consumed: Order 1456 | Monitor | PROCESSING
+[2026-05-16T12:35:29.430+0000] {subprocess.py:93} INFO - Consumed: Order 7431 | Monitor | ORDER_PLACED
+[2026-05-16T12:35:29.430+0000] {subprocess.py:93} INFO - Consumed: Order 6836 | Keyboard | PROCESSING
+[2026-05-16T12:35:29.431+0000] {subprocess.py:93} INFO - Consumed: Order 4143 | Keyboard | SHIPPED
+[2026-05-16T12:35:29.431+0000] {subprocess.py:93} INFO - Consumed: Order 8724 | Keyboard | ORDER_PLACED
+[2026-05-16T12:35:29.431+0000] {subprocess.py:93} INFO - Consumed: Order 2287 | Headphones | ORDER_PLACED
+[2026-05-16T12:35:29.432+0000] {subprocess.py:93} INFO - Consumed: Order 6226 | Phone | ORDER_PLACED
+[2026-05-16T12:35:29.434+0000] {subprocess.py:93} INFO - Consumed: Order 9013 | Keyboard | IN_TRANSIT
+[2026-05-16T12:35:29.435+0000] {subprocess.py:93} INFO - Consumed: Order 3179 | Phone | PROCESSING
+[2026-05-16T12:35:29.435+0000] {subprocess.py:93} INFO - ✅ Written batch 1 → bronze/shipments/2026/05/16/batch_1_123519.json (10 events)
+[2026-05-16T12:35:29.435+0000] {subprocess.py:93} INFO - Consumed: Order 1047 | Tablet | SHIPPED
+[2026-05-16T12:35:29.435+0000] {subprocess.py:93} INFO - Consumed: Order 3176 | Keyboard | IN_TRANSIT
+[2026-05-16T12:35:29.439+0000] {subprocess.py:93} INFO - Consumed: Order 7499 | Headphones | DELAYED
+[2026-05-16T12:35:29.439+0000] {subprocess.py:93} INFO - Consumed: Order 1893 | Keyboard | SHIPPED
+[2026-05-16T12:35:29.440+0000] {subprocess.py:93} INFO - Consumed: Order 9623 | Monitor | DELIVERED
+[2026-05-16T12:35:29.440+0000] {subprocess.py:93} INFO - Consumed: Order 4789 | Headphones | DELAYED
+[2026-05-16T12:35:29.440+0000] {subprocess.py:93} INFO - Consumed: Order 5784 | Headphones | ORDER_PLACED
+[2026-05-16T12:35:29.440+0000] {subprocess.py:93} INFO - Consumed: Order 6394 | Camera | SHIPPED
+[2026-05-16T12:35:29.441+0000] {subprocess.py:93} INFO - Consumed: Order 2241 | Camera | PROCESSING
+[2026-05-16T12:35:29.441+0000] {subprocess.py:93} INFO - Consumed: Order 3658 | Monitor | IN_TRANSIT
+[2026-05-16T12:35:29.441+0000] {subprocess.py:93} INFO - ✅ Written batch 2 → bronze/shipments/2026/05/16/batch_2_123519.json (10 events)
+[2026-05-16T12:35:29.441+0000] {subprocess.py:93} INFO - Consumed: Order 7319 | Headphones | ORDER_PLACED
+[2026-05-16T12:35:29.441+0000] {subprocess.py:93} INFO - Consumed: Order 9937 | Headphones | OUT_FOR_DELIVERY
+[2026-05-16T12:35:29.442+0000] {subprocess.py:93} INFO - Consumed: Order 2159 | Keyboard | SHIPPED
+[2026-05-16T12:35:29.442+0000] {subprocess.py:93} INFO - Consumed: Order 4072 | Headphones | PROCESSING
+[2026-05-16T12:35:29.442+0000] {subprocess.py:93} INFO - Consumed: Order 1392 | Monitor | SHIPPED
+[2026-05-16T12:35:29.442+0000] {subprocess.py:93} INFO - Consumed: Order 7065 | Monitor | DELIVERED
+[2026-05-16T12:35:29.442+0000] {subprocess.py:93} INFO - Consumed: Order 2222 | Phone | OUT_FOR_DELIVERY
+[2026-05-16T12:35:29.442+0000] {subprocess.py:93} INFO - Consumed: Order 1406 | Tablet | DELIVERED
+[2026-05-16T12:35:29.442+0000] {subprocess.py:93} INFO - Consumed: Order 2055 | Monitor | SHIPPED
+[2026-05-16T12:35:29.443+0000] {subprocess.py:93} INFO - Consumed: Order 7862 | Phone | DELAYED
+[2026-05-16T12:35:29.443+0000] {subprocess.py:93} INFO - ✅ Written batch 3 → bronze/shipments/2026/05/16/batch_3_123519.json (10 events)
+[2026-05-16T12:35:29.443+0000] {subprocess.py:93} INFO - Consumed: Order 3207 | Keyboard | SHIPPED
+[2026-05-16T12:35:29.443+0000] {subprocess.py:93} INFO - Consumed: Order 4259 | Tablet | OUT_FOR_DELIVERY
+[2026-05-16T12:35:29.443+0000] {subprocess.py:93} INFO - Consumed: Order 3576 | Camera | OUT_FOR_DELIVERY
+[2026-05-16T12:35:29.444+0000] {subprocess.py:93} INFO - Consumed: Order 1730 | Tablet | DELAYED
+[2026-05-16T12:35:29.446+0000] {subprocess.py:93} INFO - Consumed: Order 8295 | Phone | ORDER_PLACED
+[2026-05-16T12:35:29.446+0000] {subprocess.py:93} INFO - Consumed: Order 9759 | Laptop | SHIPPED
+[2026-05-16T12:35:29.446+0000] {subprocess.py:93} INFO - Consumed: Order 2783 | Keyboard | IN_TRANSIT
+[2026-05-16T12:35:29.446+0000] {subprocess.py:93} INFO - Consumed: Order 9668 | Keyboard | ORDER_PLACED
+[2026-05-16T12:35:29.446+0000] {subprocess.py:93} INFO - Consumed: Order 7863 | Headphones | DELIVERED
+[2026-05-16T12:35:29.447+0000] {subprocess.py:93} INFO - Consumed: Order 1181 | Tablet | ORDER_PLACED
+[2026-05-16T12:35:29.447+0000] {subprocess.py:93} INFO - ✅ Written batch 4 → bronze/shipments/2026/05/16/batch_4_123519.json (10 events)
+[2026-05-16T12:35:29.447+0000] {subprocess.py:93} INFO - Consumed: Order 9751 | Keyboard | DELAYED
+[2026-05-16T12:35:29.447+0000] {subprocess.py:93} INFO - Consumed: Order 8226 | Monitor | OUT_FOR_DELIVERY
+[2026-05-16T12:35:29.447+0000] {subprocess.py:93} INFO - Consumed: Order 8891 | Monitor | PROCESSING
+[2026-05-16T12:35:29.447+0000] {subprocess.py:93} INFO - Consumed: Order 5770 | Tablet | IN_TRANSIT
+[2026-05-16T12:35:29.447+0000] {subprocess.py:93} INFO - Consumed: Order 4350 | Keyboard | PROCESSING
+[2026-05-16T12:35:29.447+0000] {subprocess.py:93} INFO - Consumed: Order 7281 | Keyboard | PROCESSING
+[2026-05-16T12:35:29.448+0000] {subprocess.py:93} INFO - Consumed: Order 4092 | Monitor | DELIVERED
+[2026-05-16T12:35:29.448+0000] {subprocess.py:93} INFO - Consumed: Order 2084 | Phone | ORDER_PLACED
+[2026-05-16T12:35:29.450+0000] {subprocess.py:93} INFO - Consumed: Order 4993 | Headphones | SHIPPED
+[2026-05-16T12:35:29.451+0000] {subprocess.py:93} INFO - Consumed: Order 8574 | Tablet | OUT_FOR_DELIVERY
+[2026-05-16T12:35:29.451+0000] {subprocess.py:93} INFO - ✅ Written batch 5 → bronze/shipments/2026/05/16/batch_5_123519.json (10 events)
+[2026-05-16T12:35:29.451+0000] {subprocess.py:93} INFO - Consumed: Order 5792 | Phone | PROCESSING
+[2026-05-16T12:35:29.451+0000] {subprocess.py:93} INFO - Consumed: Order 9073 | Phone | DELIVERED
+[2026-05-16T12:35:29.451+0000] {subprocess.py:93} INFO - Consumed: Order 8101 | Monitor | SHIPPED
+[2026-05-16T12:35:29.451+0000] {subprocess.py:93} INFO - Consumed: Order 5714 | Tablet | DELIVERED
+[2026-05-16T12:35:29.452+0000] {subprocess.py:93} INFO - Consumed: Order 3097 | Keyboard | ORDER_PLACED
+[2026-05-16T12:35:29.452+0000] {subprocess.py:93} INFO - Consumed: Order 9515 | Camera | DELIVERED
+[2026-05-16T12:35:29.455+0000] {subprocess.py:93} INFO - Consumed: Order 3000 | Phone | ORDER_PLACED
+[2026-05-16T12:35:29.455+0000] {subprocess.py:93} INFO - Consumed: Order 7541 | Camera | SHIPPED
+[2026-05-16T12:35:29.455+0000] {subprocess.py:93} INFO - Consumed: Order 2098 | Headphones | SHIPPED
+[2026-05-16T12:35:29.455+0000] {subprocess.py:93} INFO - Consumed: Order 7527 | Camera | DELIVERED
+[2026-05-16T12:35:29.456+0000] {subprocess.py:93} INFO - ✅ Written batch 6 → bronze/shipments/2026/05/16/batch_6_123519.json (10 events)
+[2026-05-16T12:35:29.456+0000] {subprocess.py:93} INFO - Consumed: Order 7749 | Tablet | DELAYED
+[2026-05-16T12:35:29.456+0000] {subprocess.py:93} INFO - Consumed: Order 5347 | Tablet | DELIVERED
+[2026-05-16T12:35:29.456+0000] {subprocess.py:93} INFO - Consumed: Order 6619 | Headphones | OUT_FOR_DELIVERY
+[2026-05-16T12:35:29.456+0000] {subprocess.py:93} INFO - Consumed: Order 9989 | Tablet | ORDER_PLACED
+[2026-05-16T12:35:29.456+0000] {subprocess.py:93} INFO - Consumed: Order 5934 | Camera | DELAYED
+[2026-05-16T12:35:29.457+0000] {subprocess.py:93} INFO - Consumed: Order 1661 | Monitor | SHIPPED
+[2026-05-16T12:35:29.457+0000] {subprocess.py:93} INFO - Consumed: Order 3130 | Camera | SHIPPED
+[2026-05-16T12:35:29.457+0000] {subprocess.py:93} INFO - Consumed: Order 1520 | Monitor | DELIVERED
+[2026-05-16T12:35:29.457+0000] {subprocess.py:93} INFO - Consumed: Order 3994 | Phone | SHIPPED
+[2026-05-16T12:35:29.457+0000] {subprocess.py:93} INFO - Consumed: Order 1646 | Headphones | SHIPPED
+[2026-05-16T12:35:29.457+0000] {subprocess.py:93} INFO - ✅ Written batch 7 → bronze/shipments/2026/05/16/batch_7_123519.json (10 events)
+[2026-05-16T12:35:29.458+0000] {subprocess.py:93} INFO - Consumed: Order 8114 | Headphones | PROCESSING
+[2026-05-16T12:35:29.458+0000] {subprocess.py:93} INFO - Consumed: Order 2524 | Tablet | DELIVERED
+[2026-05-16T12:35:29.458+0000] {subprocess.py:93} INFO - Consumed: Order 6955 | Camera | SHIPPED
+[2026-05-16T12:35:29.458+0000] {subprocess.py:93} INFO - Consumed: Order 8250 | Tablet | ORDER_PLACED
+[2026-05-16T12:35:29.458+0000] {subprocess.py:93} INFO - Consumed: Order 9989 | Keyboard | OUT_FOR_DELIVERY
+[2026-05-16T12:35:29.458+0000] {subprocess.py:93} INFO - Consumed: Order 1816 | Phone | ORDER_PLACED
+[2026-05-16T12:35:29.458+0000] {subprocess.py:93} INFO - Consumed: Order 1484 | Headphones | ORDER_PLACED
+[2026-05-16T12:35:29.458+0000] {subprocess.py:93} INFO - Consumed: Order 2688 | Laptop | DELAYED
+[2026-05-16T12:35:29.459+0000] {subprocess.py:93} INFO - Consumed: Order 8575 | Phone | SHIPPED
+[2026-05-16T12:35:29.459+0000] {subprocess.py:93} INFO - Consumed: Order 8125 | Laptop | PROCESSING
+[2026-05-16T12:35:29.459+0000] {subprocess.py:93} INFO - ✅ Written batch 8 → bronze/shipments/2026/05/16/batch_8_123519.json (10 events)
+[2026-05-16T12:35:29.459+0000] {subprocess.py:93} INFO - Consumed: Order 1658 | Tablet | SHIPPED
+[2026-05-16T12:35:29.459+0000] {subprocess.py:93} INFO - Consumed: Order 8889 | Camera | DELAYED
+[2026-05-16T12:35:29.459+0000] {subprocess.py:93} INFO - Consumed: Order 6857 | Monitor | OUT_FOR_DELIVERY
+[2026-05-16T12:35:29.459+0000] {subprocess.py:93} INFO - Consumed: Order 6178 | Monitor | IN_TRANSIT
+[2026-05-16T12:35:29.460+0000] {subprocess.py:93} INFO - Consumed: Order 7000 | Keyboard | PROCESSING
+[2026-05-16T12:35:29.460+0000] {subprocess.py:93} INFO - Consumed: Order 7020 | Keyboard | SHIPPED
+[2026-05-16T12:35:29.460+0000] {subprocess.py:93} INFO - Consumed: Order 7239 | Keyboard | DELAYED
+[2026-05-16T12:35:29.460+0000] {subprocess.py:93} INFO - Consumed: Order 6583 | Laptop | DELAYED
+[2026-05-16T12:35:29.460+0000] {subprocess.py:93} INFO - Consumed: Order 3443 | Keyboard | SHIPPED
+[2026-05-16T12:35:29.460+0000] {subprocess.py:93} INFO - Consumed: Order 5207 | Headphones | DELIVERED
+[2026-05-16T12:35:29.460+0000] {subprocess.py:93} INFO - ✅ Written batch 9 → bronze/shipments/2026/05/16/batch_9_123519.json (10 events)
+[2026-05-16T12:35:29.461+0000] {subprocess.py:93} INFO - Consumed: Order 4371 | Keyboard | SHIPPED
+[2026-05-16T12:35:29.461+0000] {subprocess.py:93} INFO - Consumed: Order 9834 | Keyboard | SHIPPED
+[2026-05-16T12:35:29.461+0000] {subprocess.py:93} INFO - Consumed: Order 6673 | Keyboard | SHIPPED
+[2026-05-16T12:35:29.461+0000] {subprocess.py:93} INFO - Consumed: Order 1725 | Keyboard | DELAYED
+[2026-05-16T12:35:29.461+0000] {subprocess.py:93} INFO - Consumed: Order 7969 | Tablet | PROCESSING
+[2026-05-16T12:35:29.461+0000] {subprocess.py:93} INFO - Consumed: Order 9399 | Headphones | PROCESSING
+[2026-05-16T12:35:29.461+0000] {subprocess.py:93} INFO - Consumed: Order 6397 | Tablet | ORDER_PLACED
+[2026-05-16T12:35:29.461+0000] {subprocess.py:93} INFO - Consumed: Order 3030 | Phone | DELAYED
+[2026-05-16T12:35:29.462+0000] {subprocess.py:93} INFO - Consumed: Order 4943 | Camera | OUT_FOR_DELIVERY
+[2026-05-16T12:35:29.462+0000] {subprocess.py:93} INFO - Consumed: Order 5912 | Tablet | IN_TRANSIT
+[2026-05-16T12:35:29.462+0000] {subprocess.py:93} INFO - ✅ Written batch 10 → bronze/shipments/2026/05/16/batch_10_123519.json (10 events)
+[2026-05-16T12:35:29.462+0000] {subprocess.py:93} INFO - Consumer finished — no more messages!
+[2026-05-16T12:35:29.479+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-05-16T12:35:29.497+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=supply_chain_pipeline, task_id=kafka_consumer, execution_date=20260516T123330, start_date=20260516T123514, end_date=20260516T123529
+[2026-05-16T12:35:29.545+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-05-16T12:35:29.562+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

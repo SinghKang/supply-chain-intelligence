@@ -1,0 +1,122 @@
+[2026-05-17T09:00:00.929+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: supply_chain_pipeline.kafka_producer scheduled__2026-05-16T09:00:00+00:00 [queued]>
+[2026-05-17T09:00:00.936+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: supply_chain_pipeline.kafka_producer scheduled__2026-05-16T09:00:00+00:00 [queued]>
+[2026-05-17T09:00:00.936+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2026-05-17T09:00:00.946+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): kafka_producer> on 2026-05-16 09:00:00+00:00
+[2026-05-17T09:00:00.950+0000] {standard_task_runner.py:60} INFO - Started process 7961 to run task
+[2026-05-17T09:00:00.954+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'supply_chain_pipeline', 'kafka_producer', 'scheduled__2026-05-16T09:00:00+00:00', '--job-id', '59', '--raw', '--subdir', 'DAGS_FOLDER/supply_chain_pipeline.py', '--cfg-path', '/tmp/tmpdctx8eed']
+[2026-05-17T09:00:00.957+0000] {standard_task_runner.py:88} INFO - Job 59: Subtask kafka_producer
+[2026-05-17T09:00:01.015+0000] {task_command.py:423} INFO - Running <TaskInstance: supply_chain_pipeline.kafka_producer scheduled__2026-05-16T09:00:00+00:00 [running]> on host 77266b8302bc
+[2026-05-17T09:00:01.111+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='lovepreet' AIRFLOW_CTX_DAG_ID='supply_chain_pipeline' AIRFLOW_CTX_TASK_ID='kafka_producer' AIRFLOW_CTX_EXECUTION_DATE='2026-05-16T09:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-16T09:00:00+00:00'
+[2026-05-17T09:00:01.113+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-05-17T09:00:01.114+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /opt/airflow/ingestion/kafka_producer.py']
+[2026-05-17T09:00:01.123+0000] {subprocess.py:86} INFO - Output:
+[2026-05-17T09:01:42.353+0000] {subprocess.py:93} INFO - Starting shipment event producer...
+[2026-05-17T09:01:42.356+0000] {subprocess.py:93} INFO - Sending to topic: shipment-events
+[2026-05-17T09:01:42.357+0000] {subprocess.py:93} INFO - Broker: kafka:9092
+[2026-05-17T09:01:42.357+0000] {subprocess.py:93} INFO - 
+[2026-05-17T09:01:42.357+0000] {subprocess.py:93} INFO - [1/100] Sent: Order 6332 | Tablet | OUT_FOR_DELIVERY | FedEx → Kolkata
+[2026-05-17T09:01:42.358+0000] {subprocess.py:93} INFO - [2/100] Sent: Order 3110 | Keyboard | DELAYED | DTDC → Kolkata
+[2026-05-17T09:01:42.358+0000] {subprocess.py:93} INFO - [3/100] Sent: Order 3877 | Keyboard | DELIVERED | DHL → Jaipur
+[2026-05-17T09:01:42.358+0000] {subprocess.py:93} INFO - [4/100] Sent: Order 4628 | Camera | DELIVERED | Delhivery → Kolkata
+[2026-05-17T09:01:42.359+0000] {subprocess.py:93} INFO - [5/100] Sent: Order 4432 | Keyboard | ORDER_PLACED | DTDC → Lucknow
+[2026-05-17T09:01:42.359+0000] {subprocess.py:93} INFO - [6/100] Sent: Order 6625 | Laptop | PROCESSING | DTDC → Jaipur
+[2026-05-17T09:01:42.359+0000] {subprocess.py:93} INFO - [7/100] Sent: Order 8044 | Keyboard | IN_TRANSIT | DTDC → Kolkata
+[2026-05-17T09:01:42.360+0000] {subprocess.py:93} INFO - [8/100] Sent: Order 1089 | Camera | IN_TRANSIT | FedEx → Kolkata
+[2026-05-17T09:01:42.360+0000] {subprocess.py:93} INFO - [9/100] Sent: Order 1547 | Keyboard | DELIVERED | Blue Dart → Jaipur
+[2026-05-17T09:01:42.360+0000] {subprocess.py:93} INFO - [10/100] Sent: Order 7967 | Headphones | SHIPPED | Blue Dart → Pune
+[2026-05-17T09:01:42.361+0000] {subprocess.py:93} INFO - [11/100] Sent: Order 2071 | Phone | PROCESSING | FedEx → Pune
+[2026-05-17T09:01:42.361+0000] {subprocess.py:93} INFO - [12/100] Sent: Order 2711 | Tablet | SHIPPED | Blue Dart → Kolkata
+[2026-05-17T09:01:42.361+0000] {subprocess.py:93} INFO - [13/100] Sent: Order 5859 | Tablet | ORDER_PLACED | DHL → Lucknow
+[2026-05-17T09:01:42.362+0000] {subprocess.py:93} INFO - [14/100] Sent: Order 2547 | Phone | ORDER_PLACED | Delhivery → Kolkata
+[2026-05-17T09:01:42.362+0000] {subprocess.py:93} INFO - [15/100] Sent: Order 3674 | Camera | SHIPPED | DHL → Kolkata
+[2026-05-17T09:01:42.362+0000] {subprocess.py:93} INFO - [16/100] Sent: Order 2858 | Monitor | DELIVERED | FedEx → Lucknow
+[2026-05-17T09:01:42.363+0000] {subprocess.py:93} INFO - [17/100] Sent: Order 7472 | Phone | OUT_FOR_DELIVERY | Blue Dart → Pune
+[2026-05-17T09:01:42.363+0000] {subprocess.py:93} INFO - [18/100] Sent: Order 1399 | Phone | PROCESSING | DHL → Kolkata
+[2026-05-17T09:01:42.363+0000] {subprocess.py:93} INFO - [19/100] Sent: Order 5893 | Tablet | DELAYED | Blue Dart → Pune
+[2026-05-17T09:01:42.364+0000] {subprocess.py:93} INFO - [20/100] Sent: Order 7021 | Laptop | SHIPPED | Blue Dart → Lucknow
+[2026-05-17T09:01:42.364+0000] {subprocess.py:93} INFO - [21/100] Sent: Order 3400 | Laptop | DELIVERED | Delhivery → Jaipur
+[2026-05-17T09:01:42.364+0000] {subprocess.py:93} INFO - [22/100] Sent: Order 6876 | Keyboard | ORDER_PLACED | Blue Dart → Ahmedabad
+[2026-05-17T09:01:42.364+0000] {subprocess.py:93} INFO - [23/100] Sent: Order 5059 | Tablet | ORDER_PLACED | FedEx → Kolkata
+[2026-05-17T09:01:42.365+0000] {subprocess.py:93} INFO - [24/100] Sent: Order 3466 | Headphones | OUT_FOR_DELIVERY | FedEx → Lucknow
+[2026-05-17T09:01:42.365+0000] {subprocess.py:93} INFO - [25/100] Sent: Order 9989 | Tablet | OUT_FOR_DELIVERY | Delhivery → Lucknow
+[2026-05-17T09:01:42.365+0000] {subprocess.py:93} INFO - [26/100] Sent: Order 8776 | Phone | DELAYED | DTDC → Jaipur
+[2026-05-17T09:01:42.365+0000] {subprocess.py:93} INFO - [27/100] Sent: Order 7971 | Phone | SHIPPED | DHL → Pune
+[2026-05-17T09:01:42.366+0000] {subprocess.py:93} INFO - [28/100] Sent: Order 8932 | Keyboard | IN_TRANSIT | DHL → Ahmedabad
+[2026-05-17T09:01:42.366+0000] {subprocess.py:93} INFO - [29/100] Sent: Order 9987 | Keyboard | PROCESSING | DTDC → Jaipur
+[2026-05-17T09:01:42.366+0000] {subprocess.py:93} INFO - [30/100] Sent: Order 9683 | Laptop | OUT_FOR_DELIVERY | DHL → Jaipur
+[2026-05-17T09:01:42.367+0000] {subprocess.py:93} INFO - [31/100] Sent: Order 7584 | Headphones | ORDER_PLACED | Delhivery → Ahmedabad
+[2026-05-17T09:01:42.367+0000] {subprocess.py:93} INFO - [32/100] Sent: Order 3266 | Monitor | ORDER_PLACED | DHL → Pune
+[2026-05-17T09:01:42.367+0000] {subprocess.py:93} INFO - [33/100] Sent: Order 6502 | Phone | ORDER_PLACED | DTDC → Pune
+[2026-05-17T09:01:42.368+0000] {subprocess.py:93} INFO - [34/100] Sent: Order 3574 | Keyboard | SHIPPED | FedEx → Lucknow
+[2026-05-17T09:01:42.368+0000] {subprocess.py:93} INFO - [35/100] Sent: Order 3977 | Keyboard | DELAYED | FedEx → Ahmedabad
+[2026-05-17T09:01:42.368+0000] {subprocess.py:93} INFO - [36/100] Sent: Order 3130 | Laptop | DELAYED | Blue Dart → Lucknow
+[2026-05-17T09:01:42.368+0000] {subprocess.py:93} INFO - [37/100] Sent: Order 8457 | Laptop | IN_TRANSIT | DHL → Kolkata
+[2026-05-17T09:01:42.369+0000] {subprocess.py:93} INFO - [38/100] Sent: Order 6210 | Monitor | SHIPPED | DHL → Kolkata
+[2026-05-17T09:01:42.369+0000] {subprocess.py:93} INFO - [39/100] Sent: Order 1686 | Tablet | DELAYED | DHL → Pune
+[2026-05-17T09:01:42.369+0000] {subprocess.py:93} INFO - [40/100] Sent: Order 9723 | Tablet | DELAYED | DTDC → Jaipur
+[2026-05-17T09:01:42.369+0000] {subprocess.py:93} INFO - [41/100] Sent: Order 3694 | Laptop | OUT_FOR_DELIVERY | FedEx → Pune
+[2026-05-17T09:01:42.369+0000] {subprocess.py:93} INFO - [42/100] Sent: Order 8698 | Headphones | PROCESSING | Delhivery → Ahmedabad
+[2026-05-17T09:01:42.369+0000] {subprocess.py:93} INFO - [43/100] Sent: Order 3837 | Headphones | ORDER_PLACED | Delhivery → Lucknow
+[2026-05-17T09:01:42.370+0000] {subprocess.py:93} INFO - [44/100] Sent: Order 8326 | Laptop | DELIVERED | DTDC → Kolkata
+[2026-05-17T09:01:42.370+0000] {subprocess.py:93} INFO - [45/100] Sent: Order 9005 | Headphones | IN_TRANSIT | FedEx → Jaipur
+[2026-05-17T09:01:42.370+0000] {subprocess.py:93} INFO - [46/100] Sent: Order 9216 | Laptop | OUT_FOR_DELIVERY | DHL → Pune
+[2026-05-17T09:01:42.370+0000] {subprocess.py:93} INFO - [47/100] Sent: Order 4079 | Keyboard | DELAYED | FedEx → Kolkata
+[2026-05-17T09:01:42.371+0000] {subprocess.py:93} INFO - [48/100] Sent: Order 4912 | Tablet | ORDER_PLACED | FedEx → Lucknow
+[2026-05-17T09:01:42.371+0000] {subprocess.py:93} INFO - [49/100] Sent: Order 4965 | Tablet | ORDER_PLACED | DHL → Pune
+[2026-05-17T09:01:42.371+0000] {subprocess.py:93} INFO - [50/100] Sent: Order 8021 | Laptop | DELIVERED | Blue Dart → Kolkata
+[2026-05-17T09:01:42.371+0000] {subprocess.py:93} INFO - [51/100] Sent: Order 2758 | Camera | ORDER_PLACED | Delhivery → Ahmedabad
+[2026-05-17T09:01:42.371+0000] {subprocess.py:93} INFO - [52/100] Sent: Order 7672 | Camera | IN_TRANSIT | Blue Dart → Kolkata
+[2026-05-17T09:01:42.372+0000] {subprocess.py:93} INFO - [53/100] Sent: Order 2238 | Keyboard | PROCESSING | DTDC → Kolkata
+[2026-05-17T09:01:42.372+0000] {subprocess.py:93} INFO - [54/100] Sent: Order 2875 | Tablet | SHIPPED | DTDC → Kolkata
+[2026-05-17T09:01:42.372+0000] {subprocess.py:93} INFO - [55/100] Sent: Order 4901 | Laptop | SHIPPED | DTDC → Jaipur
+[2026-05-17T09:01:42.372+0000] {subprocess.py:93} INFO - [56/100] Sent: Order 8549 | Monitor | IN_TRANSIT | DHL → Kolkata
+[2026-05-17T09:01:42.372+0000] {subprocess.py:93} INFO - [57/100] Sent: Order 5346 | Tablet | IN_TRANSIT | Delhivery → Lucknow
+[2026-05-17T09:01:42.372+0000] {subprocess.py:93} INFO - [58/100] Sent: Order 5098 | Headphones | ORDER_PLACED | DHL → Jaipur
+[2026-05-17T09:01:42.373+0000] {subprocess.py:93} INFO - [59/100] Sent: Order 5153 | Phone | DELIVERED | DTDC → Pune
+[2026-05-17T09:01:42.373+0000] {subprocess.py:93} INFO - [60/100] Sent: Order 7544 | Phone | ORDER_PLACED | Blue Dart → Jaipur
+[2026-05-17T09:01:42.373+0000] {subprocess.py:93} INFO - [61/100] Sent: Order 6312 | Laptop | DELIVERED | Delhivery → Pune
+[2026-05-17T09:01:42.373+0000] {subprocess.py:93} INFO - [62/100] Sent: Order 4607 | Camera | IN_TRANSIT | Delhivery → Kolkata
+[2026-05-17T09:01:42.374+0000] {subprocess.py:93} INFO - [63/100] Sent: Order 9787 | Camera | ORDER_PLACED | DHL → Ahmedabad
+[2026-05-17T09:01:42.374+0000] {subprocess.py:93} INFO - [64/100] Sent: Order 8963 | Laptop | PROCESSING | Blue Dart → Lucknow
+[2026-05-17T09:01:42.374+0000] {subprocess.py:93} INFO - [65/100] Sent: Order 3985 | Monitor | ORDER_PLACED | Blue Dart → Lucknow
+[2026-05-17T09:01:42.374+0000] {subprocess.py:93} INFO - [66/100] Sent: Order 1710 | Keyboard | SHIPPED | Delhivery → Lucknow
+[2026-05-17T09:01:42.374+0000] {subprocess.py:93} INFO - [67/100] Sent: Order 6540 | Phone | PROCESSING | DTDC → Ahmedabad
+[2026-05-17T09:01:42.375+0000] {subprocess.py:93} INFO - [68/100] Sent: Order 2927 | Laptop | PROCESSING | DHL → Pune
+[2026-05-17T09:01:42.375+0000] {subprocess.py:93} INFO - [69/100] Sent: Order 3208 | Tablet | PROCESSING | Delhivery → Lucknow
+[2026-05-17T09:01:42.375+0000] {subprocess.py:93} INFO - [70/100] Sent: Order 2429 | Camera | PROCESSING | FedEx → Lucknow
+[2026-05-17T09:01:42.375+0000] {subprocess.py:93} INFO - [71/100] Sent: Order 2449 | Monitor | OUT_FOR_DELIVERY | DHL → Lucknow
+[2026-05-17T09:01:42.375+0000] {subprocess.py:93} INFO - [72/100] Sent: Order 9605 | Monitor | IN_TRANSIT | Delhivery → Kolkata
+[2026-05-17T09:01:42.375+0000] {subprocess.py:93} INFO - [73/100] Sent: Order 2403 | Keyboard | PROCESSING | FedEx → Lucknow
+[2026-05-17T09:01:42.376+0000] {subprocess.py:93} INFO - [74/100] Sent: Order 2259 | Camera | DELAYED | FedEx → Kolkata
+[2026-05-17T09:01:42.376+0000] {subprocess.py:93} INFO - [75/100] Sent: Order 3353 | Keyboard | IN_TRANSIT | DTDC → Ahmedabad
+[2026-05-17T09:01:42.376+0000] {subprocess.py:93} INFO - [76/100] Sent: Order 6542 | Phone | DELAYED | FedEx → Jaipur
+[2026-05-17T09:01:42.376+0000] {subprocess.py:93} INFO - [77/100] Sent: Order 7753 | Camera | IN_TRANSIT | FedEx → Ahmedabad
+[2026-05-17T09:01:42.376+0000] {subprocess.py:93} INFO - [78/100] Sent: Order 4115 | Laptop | OUT_FOR_DELIVERY | DTDC → Pune
+[2026-05-17T09:01:42.376+0000] {subprocess.py:93} INFO - [79/100] Sent: Order 1145 | Headphones | SHIPPED | Blue Dart → Lucknow
+[2026-05-17T09:01:42.377+0000] {subprocess.py:93} INFO - [80/100] Sent: Order 9263 | Keyboard | DELAYED | DHL → Kolkata
+[2026-05-17T09:01:42.377+0000] {subprocess.py:93} INFO - [81/100] Sent: Order 1817 | Keyboard | IN_TRANSIT | Delhivery → Pune
+[2026-05-17T09:01:42.377+0000] {subprocess.py:93} INFO - [82/100] Sent: Order 3960 | Camera | OUT_FOR_DELIVERY | FedEx → Ahmedabad
+[2026-05-17T09:01:42.377+0000] {subprocess.py:93} INFO - [83/100] Sent: Order 6768 | Laptop | IN_TRANSIT | Delhivery → Kolkata
+[2026-05-17T09:01:42.377+0000] {subprocess.py:93} INFO - [84/100] Sent: Order 7834 | Tablet | PROCESSING | FedEx → Lucknow
+[2026-05-17T09:01:42.378+0000] {subprocess.py:93} INFO - [85/100] Sent: Order 7166 | Laptop | OUT_FOR_DELIVERY | Blue Dart → Kolkata
+[2026-05-17T09:01:42.378+0000] {subprocess.py:93} INFO - [86/100] Sent: Order 6417 | Phone | SHIPPED | Blue Dart → Lucknow
+[2026-05-17T09:01:42.378+0000] {subprocess.py:93} INFO - [87/100] Sent: Order 1159 | Tablet | SHIPPED | Blue Dart → Kolkata
+[2026-05-17T09:01:42.378+0000] {subprocess.py:93} INFO - [88/100] Sent: Order 4816 | Camera | ORDER_PLACED | FedEx → Jaipur
+[2026-05-17T09:01:42.378+0000] {subprocess.py:93} INFO - [89/100] Sent: Order 4139 | Monitor | ORDER_PLACED | DTDC → Pune
+[2026-05-17T09:01:42.378+0000] {subprocess.py:93} INFO - [90/100] Sent: Order 5110 | Camera | DELAYED | Delhivery → Pune
+[2026-05-17T09:01:42.379+0000] {subprocess.py:93} INFO - [91/100] Sent: Order 2618 | Phone | DELIVERED | DHL → Kolkata
+[2026-05-17T09:01:42.379+0000] {subprocess.py:93} INFO - [92/100] Sent: Order 7422 | Monitor | DELIVERED | Blue Dart → Jaipur
+[2026-05-17T09:01:42.379+0000] {subprocess.py:93} INFO - [93/100] Sent: Order 6313 | Tablet | ORDER_PLACED | DHL → Ahmedabad
+[2026-05-17T09:01:42.379+0000] {subprocess.py:93} INFO - [94/100] Sent: Order 6480 | Tablet | DELIVERED | FedEx → Jaipur
+[2026-05-17T09:01:42.379+0000] {subprocess.py:93} INFO - [95/100] Sent: Order 8869 | Camera | DELIVERED | Blue Dart → Jaipur
+[2026-05-17T09:01:42.379+0000] {subprocess.py:93} INFO - [96/100] Sent: Order 9087 | Camera | IN_TRANSIT | DHL → Jaipur
+[2026-05-17T09:01:42.380+0000] {subprocess.py:93} INFO - [97/100] Sent: Order 7542 | Headphones | SHIPPED | DTDC → Pune
+[2026-05-17T09:01:42.380+0000] {subprocess.py:93} INFO - [98/100] Sent: Order 6389 | Camera | SHIPPED | Delhivery → Kolkata
+[2026-05-17T09:01:42.380+0000] {subprocess.py:93} INFO - [99/100] Sent: Order 4080 | Headphones | SHIPPED | Blue Dart → Ahmedabad
+[2026-05-17T09:01:42.380+0000] {subprocess.py:93} INFO - [100/100] Sent: Order 2083 | Monitor | ORDER_PLACED | FedEx → Ahmedabad
+[2026-05-17T09:01:42.380+0000] {subprocess.py:93} INFO - 
+[2026-05-17T09:01:42.380+0000] {subprocess.py:93} INFO - All events sent successfully!
+[2026-05-17T09:01:42.403+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-05-17T09:01:42.468+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=supply_chain_pipeline, task_id=kafka_producer, execution_date=20260516T090000, start_date=20260517T090000, end_date=20260517T090142
+[2026-05-17T09:01:42.511+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-05-17T09:01:42.542+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

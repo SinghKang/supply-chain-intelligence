@@ -1,0 +1,266 @@
+[2026-05-16T13:08:27.592+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: supply_chain_pipeline.quality_checks manual__2026-05-16T12:33:30.431294+00:00 [queued]>
+[2026-05-16T13:08:27.606+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: supply_chain_pipeline.quality_checks manual__2026-05-16T12:33:30.431294+00:00 [queued]>
+[2026-05-16T13:08:27.607+0000] {taskinstance.py:2170} INFO - Starting attempt 2 of 3
+[2026-05-16T13:08:27.628+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): quality_checks> on 2026-05-16 12:33:30.431294+00:00
+[2026-05-16T13:08:27.636+0000] {standard_task_runner.py:60} INFO - Started process 1508 to run task
+[2026-05-16T13:08:27.641+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'supply_chain_pipeline', 'quality_checks', 'manual__2026-05-16T12:33:30.431294+00:00', '--job-id', '52', '--raw', '--subdir', 'DAGS_FOLDER/supply_chain_pipeline.py', '--cfg-path', '/tmp/tmpxj4g0r5s']
+[2026-05-16T13:08:27.645+0000] {standard_task_runner.py:88} INFO - Job 52: Subtask quality_checks
+[2026-05-16T13:08:27.723+0000] {task_command.py:423} INFO - Running <TaskInstance: supply_chain_pipeline.quality_checks manual__2026-05-16T12:33:30.431294+00:00 [running]> on host 77266b8302bc
+[2026-05-16T13:08:27.889+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='lovepreet' AIRFLOW_CTX_DAG_ID='supply_chain_pipeline' AIRFLOW_CTX_TASK_ID='quality_checks' AIRFLOW_CTX_EXECUTION_DATE='2026-05-16T12:33:30.431294+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-16T12:33:30.431294+00:00'
+[2026-05-16T13:08:27.893+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-05-16T13:08:27.896+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /opt/airflow/quality/silver_quality_checks.py']
+[2026-05-16T13:08:27.913+0000] {subprocess.py:86} INFO - Output:
+[2026-05-16T13:08:29.513+0000] {subprocess.py:93} INFO - :: loading settings :: url = jar:file:/home/airflow/.local/lib/python3.8/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2026-05-16T13:08:29.554+0000] {subprocess.py:93} INFO - Ivy Default Cache set to: /home/airflow/.ivy2/cache
+[2026-05-16T13:08:29.555+0000] {subprocess.py:93} INFO - The jars for the packages stored in: /home/airflow/.ivy2/jars
+[2026-05-16T13:08:29.557+0000] {subprocess.py:93} INFO - io.delta#delta-spark_2.12 added as a dependency
+[2026-05-16T13:08:29.557+0000] {subprocess.py:93} INFO - org.apache.hadoop#hadoop-aws added as a dependency
+[2026-05-16T13:08:29.557+0000] {subprocess.py:93} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-eb618e6b-4004-40ba-82f8-8060b56a6e57;1.0
+[2026-05-16T13:08:29.558+0000] {subprocess.py:93} INFO - 	confs: [default]
+[2026-05-16T13:08:29.627+0000] {subprocess.py:93} INFO - 	found io.delta#delta-spark_2.12;3.0.0 in central
+[2026-05-16T13:08:29.641+0000] {subprocess.py:93} INFO - 	found io.delta#delta-storage;3.0.0 in central
+[2026-05-16T13:08:29.654+0000] {subprocess.py:93} INFO - 	found org.antlr#antlr4-runtime;4.9.3 in central
+[2026-05-16T13:08:29.688+0000] {subprocess.py:93} INFO - 	found org.apache.hadoop#hadoop-aws;3.3.4 in central
+[2026-05-16T13:08:29.700+0000] {subprocess.py:93} INFO - 	found com.amazonaws#aws-java-sdk-bundle;1.12.262 in central
+[2026-05-16T13:08:29.712+0000] {subprocess.py:93} INFO - 	found org.wildfly.openssl#wildfly-openssl;1.0.7.Final in central
+[2026-05-16T13:08:29.728+0000] {subprocess.py:93} INFO - :: resolution report :: resolve 164ms :: artifacts dl 7ms
+[2026-05-16T13:08:29.729+0000] {subprocess.py:93} INFO - 	:: modules in use:
+[2026-05-16T13:08:29.729+0000] {subprocess.py:93} INFO - 	com.amazonaws#aws-java-sdk-bundle;1.12.262 from central in [default]
+[2026-05-16T13:08:29.729+0000] {subprocess.py:93} INFO - 	io.delta#delta-spark_2.12;3.0.0 from central in [default]
+[2026-05-16T13:08:29.729+0000] {subprocess.py:93} INFO - 	io.delta#delta-storage;3.0.0 from central in [default]
+[2026-05-16T13:08:29.730+0000] {subprocess.py:93} INFO - 	org.antlr#antlr4-runtime;4.9.3 from central in [default]
+[2026-05-16T13:08:29.730+0000] {subprocess.py:93} INFO - 	org.apache.hadoop#hadoop-aws;3.3.4 from central in [default]
+[2026-05-16T13:08:29.730+0000] {subprocess.py:93} INFO - 	org.wildfly.openssl#wildfly-openssl;1.0.7.Final from central in [default]
+[2026-05-16T13:08:29.730+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2026-05-16T13:08:29.731+0000] {subprocess.py:93} INFO - 	|                  |            modules            ||   artifacts   |
+[2026-05-16T13:08:29.731+0000] {subprocess.py:93} INFO - 	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2026-05-16T13:08:29.731+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2026-05-16T13:08:29.731+0000] {subprocess.py:93} INFO - 	|      default     |   6   |   0   |   0   |   0   ||   6   |   0   |
+[2026-05-16T13:08:29.732+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2026-05-16T13:08:29.732+0000] {subprocess.py:93} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-eb618e6b-4004-40ba-82f8-8060b56a6e57
+[2026-05-16T13:08:29.732+0000] {subprocess.py:93} INFO - 	confs: [default]
+[2026-05-16T13:08:29.736+0000] {subprocess.py:93} INFO - 	0 artifacts copied, 6 already retrieved (0kB/5ms)
+[2026-05-16T13:08:29.849+0000] {subprocess.py:93} INFO - 26/05/16 13:08:29 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2026-05-16T13:08:29.957+0000] {subprocess.py:93} INFO - Setting default log level to "WARN".
+[2026-05-16T13:08:29.957+0000] {subprocess.py:93} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2026-05-16T13:34:06.117+0000] {subprocess.py:93} INFO - Reading Silver layer for quality checks...
+[2026-05-16T13:34:06.162+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2026-05-16T13:34:06.163+0000] {subprocess.py:93} INFO -   File "/opt/airflow/quality/silver_quality_checks.py", line 35, in <module>
+[2026-05-16T13:34:06.164+0000] {subprocess.py:93} INFO -     total = df.count()
+[2026-05-16T13:34:06.164+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/sql/readwriter.py", line 307, in load
+[2026-05-16T13:34:06.164+0000] {subprocess.py:93} INFO -     return self._df(self._jreader.load(path))
+[2026-05-16T13:34:06.165+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/py4j/java_gateway.py", line 1322, in __call__
+[2026-05-16T13:34:06.165+0000] {subprocess.py:93} INFO -     return_value = get_return_value(
+[2026-05-16T13:34:06.165+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/pyspark/errors/exceptions/captured.py", line 179, in deco
+[2026-05-16T13:34:06.166+0000] {subprocess.py:93} INFO -     return f(*a, **kw)
+[2026-05-16T13:34:06.166+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/py4j/protocol.py", line 326, in get_return_value
+[2026-05-16T13:34:06.166+0000] {subprocess.py:93} INFO -     raise Py4JJavaError(
+[2026-05-16T13:34:06.166+0000] {subprocess.py:93} INFO - py4j.protocol.Py4JJavaError: An error occurred while calling o46.load.
+[2026-05-16T13:34:06.167+0000] {subprocess.py:93} INFO - : java.util.concurrent.ExecutionException: org.apache.hadoop.fs.s3a.AWSClientIOException: getFileStatus on s3a://silver/shipments/_delta_log: com.amazonaws.SdkClientException: Unable to execute HTTP request: Connect to localhost:9000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: Unable to execute HTTP request: Connect to localhost:9000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+[2026-05-16T13:34:06.167+0000] {subprocess.py:93} INFO - 	at com.google.common.util.concurrent.AbstractFuture$Sync.getValue(AbstractFuture.java:306)
+[2026-05-16T13:34:06.167+0000] {subprocess.py:93} INFO - 	at com.google.common.util.concurrent.AbstractFuture$Sync.get(AbstractFuture.java:293)
+[2026-05-16T13:34:06.167+0000] {subprocess.py:93} INFO - 	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:116)
+[2026-05-16T13:34:06.168+0000] {subprocess.py:93} INFO - 	at com.google.common.util.concurrent.Uninterruptibles.getUninterruptibly(Uninterruptibles.java:135)
+[2026-05-16T13:34:06.168+0000] {subprocess.py:93} INFO - 	at com.google.common.cache.LocalCache$Segment.getAndRecordStats(LocalCache.java:2410)
+[2026-05-16T13:34:06.184+0000] {subprocess.py:93} INFO - 	at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2380)
+[2026-05-16T13:34:06.184+0000] {subprocess.py:93} INFO - 	at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2342)
+[2026-05-16T13:34:06.184+0000] {subprocess.py:93} INFO - 	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2257)
+[2026-05-16T13:34:06.185+0000] {subprocess.py:93} INFO - 	at com.google.common.cache.LocalCache.get(LocalCache.java:4000)
+[2026-05-16T13:34:06.185+0000] {subprocess.py:93} INFO - 	at com.google.common.cache.LocalCache$LocalManualCache.get(LocalCache.java:4789)
+[2026-05-16T13:34:06.185+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog$.getDeltaLogFromCache$1(DeltaLog.scala:799)
+[2026-05-16T13:34:06.185+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog$.apply(DeltaLog.scala:809)
+[2026-05-16T13:34:06.185+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog$.forTable(DeltaLog.scala:686)
+[2026-05-16T13:34:06.186+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.catalog.DeltaTableV2.deltaLog$lzycompute(DeltaTableV2.scala:90)
+[2026-05-16T13:34:06.186+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.catalog.DeltaTableV2.deltaLog(DeltaTableV2.scala:89)
+[2026-05-16T13:34:06.186+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.catalog.DeltaTableV2.$anonfun$initialSnapshot$3(DeltaTableV2.scala:140)
+[2026-05-16T13:34:06.186+0000] {subprocess.py:93} INFO - 	at scala.Option.getOrElse(Option.scala:189)
+[2026-05-16T13:34:06.186+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.catalog.DeltaTableV2.initialSnapshot$lzycompute(DeltaTableV2.scala:140)
+[2026-05-16T13:34:06.187+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.catalog.DeltaTableV2.initialSnapshot(DeltaTableV2.scala:121)
+[2026-05-16T13:34:06.187+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.catalog.DeltaTableV2.toBaseRelation$lzycompute(DeltaTableV2.scala:231)
+[2026-05-16T13:34:06.187+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.catalog.DeltaTableV2.toBaseRelation(DeltaTableV2.scala:229)
+[2026-05-16T13:34:06.187+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.sources.DeltaDataSource.$anonfun$createRelation$5(DeltaDataSource.scala:249)
+[2026-05-16T13:34:06.187+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordFrameProfile(DeltaLogging.scala:140)
+[2026-05-16T13:34:06.187+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordFrameProfile$(DeltaLogging.scala:138)
+[2026-05-16T13:34:06.187+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.sources.DeltaDataSource.recordFrameProfile(DeltaDataSource.scala:49)
+[2026-05-16T13:34:06.187+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.sources.DeltaDataSource.createRelation(DeltaDataSource.scala:208)
+[2026-05-16T13:34:06.188+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:346)
+[2026-05-16T13:34:06.188+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.loadV1Source(DataFrameReader.scala:229)
+[2026-05-16T13:34:06.188+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.$anonfun$load$2(DataFrameReader.scala:211)
+[2026-05-16T13:34:06.188+0000] {subprocess.py:93} INFO - 	at scala.Option.getOrElse(Option.scala:189)
+[2026-05-16T13:34:06.188+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:211)
+[2026-05-16T13:34:06.188+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:186)
+[2026-05-16T13:34:06.189+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2026-05-16T13:34:06.189+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+[2026-05-16T13:34:06.189+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2026-05-16T13:34:06.189+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+[2026-05-16T13:34:06.189+0000] {subprocess.py:93} INFO - 	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2026-05-16T13:34:06.189+0000] {subprocess.py:93} INFO - 	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2026-05-16T13:34:06.189+0000] {subprocess.py:93} INFO - 	at py4j.Gateway.invoke(Gateway.java:282)
+[2026-05-16T13:34:06.190+0000] {subprocess.py:93} INFO - 	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2026-05-16T13:34:06.190+0000] {subprocess.py:93} INFO - 	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2026-05-16T13:34:06.190+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2026-05-16T13:34:06.190+0000] {subprocess.py:93} INFO - 	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2026-05-16T13:34:06.191+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.Thread.run(Thread.java:840)
+[2026-05-16T13:34:06.191+0000] {subprocess.py:93} INFO - Caused by: org.apache.hadoop.fs.s3a.AWSClientIOException: getFileStatus on s3a://silver/shipments/_delta_log: com.amazonaws.SdkClientException: Unable to execute HTTP request: Connect to localhost:9000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: Unable to execute HTTP request: Connect to localhost:9000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+[2026-05-16T13:34:06.191+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.s3a.S3AUtils.translateException(S3AUtils.java:214)
+[2026-05-16T13:34:06.191+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.s3a.S3AUtils.translateException(S3AUtils.java:175)
+[2026-05-16T13:34:06.191+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.s3a.S3AFileSystem.s3GetFileStatus(S3AFileSystem.java:3799)
+[2026-05-16T13:34:06.191+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.s3a.S3AFileSystem.innerGetFileStatus(S3AFileSystem.java:3688)
+[2026-05-16T13:34:06.192+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.s3a.S3AFileSystem.lambda$exists$34(S3AFileSystem.java:4703)
+[2026-05-16T13:34:06.192+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.statistics.impl.IOStatisticsBinding.lambda$trackDurationOfOperation$5(IOStatisticsBinding.java:499)
+[2026-05-16T13:34:06.192+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.statistics.impl.IOStatisticsBinding.trackDuration(IOStatisticsBinding.java:444)
+[2026-05-16T13:34:06.192+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.s3a.S3AFileSystem.trackDurationAndSpan(S3AFileSystem.java:2337)
+[2026-05-16T13:34:06.192+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.s3a.S3AFileSystem.trackDurationAndSpan(S3AFileSystem.java:2356)
+[2026-05-16T13:34:06.192+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.s3a.S3AFileSystem.exists(S3AFileSystem.java:4701)
+[2026-05-16T13:34:06.192+0000] {subprocess.py:93} INFO - 	at io.delta.storage.S3SingleDriverLogStore.listFromInternal(S3SingleDriverLogStore.java:201)
+[2026-05-16T13:34:06.192+0000] {subprocess.py:93} INFO - 	at io.delta.storage.S3SingleDriverLogStore.listFrom(S3SingleDriverLogStore.java:306)
+[2026-05-16T13:34:06.192+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.storage.LogStoreAdaptor.listFrom(LogStore.scala:452)
+[2026-05-16T13:34:06.193+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.storage.DelegatingLogStore.listFrom(DelegatingLogStore.scala:127)
+[2026-05-16T13:34:06.193+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.Checkpoints.findLastCompleteCheckpointBefore(Checkpoints.scala:412)
+[2026-05-16T13:34:06.193+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.Checkpoints.findLastCompleteCheckpointBefore$(Checkpoints.scala:400)
+[2026-05-16T13:34:06.193+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog.findLastCompleteCheckpointBefore(DeltaLog.scala:73)
+[2026-05-16T13:34:06.193+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.Checkpoints.$anonfun$loadMetadataFromFile$1(Checkpoints.scala:367)
+[2026-05-16T13:34:06.193+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordFrameProfile(DeltaLogging.scala:140)
+[2026-05-16T13:34:06.193+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordFrameProfile$(DeltaLogging.scala:138)
+[2026-05-16T13:34:06.193+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog.recordFrameProfile(DeltaLog.scala:73)
+[2026-05-16T13:34:06.193+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.$anonfun$recordDeltaOperationInternal$1(DeltaLogging.scala:133)
+[2026-05-16T13:34:06.194+0000] {subprocess.py:93} INFO - 	at com.databricks.spark.util.DatabricksLogging.recordOperation(DatabricksLogging.scala:128)
+[2026-05-16T13:34:06.194+0000] {subprocess.py:93} INFO - 	at com.databricks.spark.util.DatabricksLogging.recordOperation$(DatabricksLogging.scala:117)
+[2026-05-16T13:34:06.194+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog.recordOperation(DeltaLog.scala:73)
+[2026-05-16T13:34:06.194+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordDeltaOperationInternal(DeltaLogging.scala:132)
+[2026-05-16T13:34:06.194+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordDeltaOperation(DeltaLogging.scala:122)
+[2026-05-16T13:34:06.194+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordDeltaOperation$(DeltaLogging.scala:112)
+[2026-05-16T13:34:06.194+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog.recordDeltaOperation(DeltaLog.scala:73)
+[2026-05-16T13:34:06.194+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.Checkpoints.loadMetadataFromFile(Checkpoints.scala:344)
+[2026-05-16T13:34:06.194+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.Checkpoints.$anonfun$loadMetadataFromFile$1(Checkpoints.scala:355)
+[2026-05-16T13:34:06.194+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordFrameProfile(DeltaLogging.scala:140)
+[2026-05-16T13:34:06.195+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordFrameProfile$(DeltaLogging.scala:138)
+[2026-05-16T13:34:06.195+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog.recordFrameProfile(DeltaLog.scala:73)
+[2026-05-16T13:34:06.195+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.$anonfun$recordDeltaOperationInternal$1(DeltaLogging.scala:133)
+[2026-05-16T13:34:06.195+0000] {subprocess.py:93} INFO - 	at com.databricks.spark.util.DatabricksLogging.recordOperation(DatabricksLogging.scala:128)
+[2026-05-16T13:34:06.195+0000] {subprocess.py:93} INFO - 	at com.databricks.spark.util.DatabricksLogging.recordOperation$(DatabricksLogging.scala:117)
+[2026-05-16T13:34:06.195+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog.recordOperation(DeltaLog.scala:73)
+[2026-05-16T13:34:06.195+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordDeltaOperationInternal(DeltaLogging.scala:132)
+[2026-05-16T13:34:06.195+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordDeltaOperation(DeltaLogging.scala:122)
+[2026-05-16T13:34:06.195+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordDeltaOperation$(DeltaLogging.scala:112)
+[2026-05-16T13:34:06.195+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog.recordDeltaOperation(DeltaLog.scala:73)
+[2026-05-16T13:34:06.196+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.Checkpoints.loadMetadataFromFile(Checkpoints.scala:344)
+[2026-05-16T13:34:06.196+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.Checkpoints.$anonfun$loadMetadataFromFile$1(Checkpoints.scala:355)
+[2026-05-16T13:34:06.196+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordFrameProfile(DeltaLogging.scala:140)
+[2026-05-16T13:34:06.196+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordFrameProfile$(DeltaLogging.scala:138)
+[2026-05-16T13:34:06.196+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog.recordFrameProfile(DeltaLog.scala:73)
+[2026-05-16T13:34:06.196+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.$anonfun$recordDeltaOperationInternal$1(DeltaLogging.scala:133)
+[2026-05-16T13:34:06.196+0000] {subprocess.py:93} INFO - 	at com.databricks.spark.util.DatabricksLogging.recordOperation(DatabricksLogging.scala:128)
+[2026-05-16T13:34:06.196+0000] {subprocess.py:93} INFO - 	at com.databricks.spark.util.DatabricksLogging.recordOperation$(DatabricksLogging.scala:117)
+[2026-05-16T13:34:06.196+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog.recordOperation(DeltaLog.scala:73)
+[2026-05-16T13:34:06.197+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordDeltaOperationInternal(DeltaLogging.scala:132)
+[2026-05-16T13:34:06.197+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordDeltaOperation(DeltaLogging.scala:122)
+[2026-05-16T13:34:06.197+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordDeltaOperation$(DeltaLogging.scala:112)
+[2026-05-16T13:34:06.197+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog.recordDeltaOperation(DeltaLog.scala:73)
+[2026-05-16T13:34:06.197+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.Checkpoints.loadMetadataFromFile(Checkpoints.scala:344)
+[2026-05-16T13:34:06.198+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.Checkpoints.$anonfun$loadMetadataFromFile$1(Checkpoints.scala:355)
+[2026-05-16T13:34:06.198+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordFrameProfile(DeltaLogging.scala:140)
+[2026-05-16T13:34:06.198+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordFrameProfile$(DeltaLogging.scala:138)
+[2026-05-16T13:34:06.198+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog.recordFrameProfile(DeltaLog.scala:73)
+[2026-05-16T13:34:06.198+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.$anonfun$recordDeltaOperationInternal$1(DeltaLogging.scala:133)
+[2026-05-16T13:34:06.199+0000] {subprocess.py:93} INFO - 	at com.databricks.spark.util.DatabricksLogging.recordOperation(DatabricksLogging.scala:128)
+[2026-05-16T13:34:06.199+0000] {subprocess.py:93} INFO - 	at com.databricks.spark.util.DatabricksLogging.recordOperation$(DatabricksLogging.scala:117)
+[2026-05-16T13:34:06.199+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog.recordOperation(DeltaLog.scala:73)
+[2026-05-16T13:34:06.199+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordDeltaOperationInternal(DeltaLogging.scala:132)
+[2026-05-16T13:34:06.199+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordDeltaOperation(DeltaLogging.scala:122)
+[2026-05-16T13:34:06.199+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordDeltaOperation$(DeltaLogging.scala:112)
+[2026-05-16T13:34:06.199+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog.recordDeltaOperation(DeltaLog.scala:73)
+[2026-05-16T13:34:06.199+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.Checkpoints.loadMetadataFromFile(Checkpoints.scala:344)
+[2026-05-16T13:34:06.199+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.Checkpoints.readLastCheckpointFile(Checkpoints.scala:338)
+[2026-05-16T13:34:06.199+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.Checkpoints.readLastCheckpointFile$(Checkpoints.scala:337)
+[2026-05-16T13:34:06.200+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog.readLastCheckpointFile(DeltaLog.scala:73)
+[2026-05-16T13:34:06.200+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.SnapshotManagement.$anonfun$getSnapshotAtInit$1(SnapshotManagement.scala:408)
+[2026-05-16T13:34:06.200+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordFrameProfile(DeltaLogging.scala:140)
+[2026-05-16T13:34:06.200+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordFrameProfile$(DeltaLogging.scala:138)
+[2026-05-16T13:34:06.200+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog.recordFrameProfile(DeltaLog.scala:73)
+[2026-05-16T13:34:06.200+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.SnapshotManagement.getSnapshotAtInit(SnapshotManagement.scala:406)
+[2026-05-16T13:34:06.200+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.SnapshotManagement.getSnapshotAtInit$(SnapshotManagement.scala:405)
+[2026-05-16T13:34:06.200+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog.getSnapshotAtInit(DeltaLog.scala:73)
+[2026-05-16T13:34:06.200+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.SnapshotManagement.$init$(SnapshotManagement.scala:59)
+[2026-05-16T13:34:06.200+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog.<init>(DeltaLog.scala:79)
+[2026-05-16T13:34:06.201+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog$.$anonfun$apply$4(DeltaLog.scala:788)
+[2026-05-16T13:34:06.201+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper$.allowInvokingTransformsInAnalyzer(AnalysisHelper.scala:323)
+[2026-05-16T13:34:06.201+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog$.$anonfun$apply$3(DeltaLog.scala:783)
+[2026-05-16T13:34:06.201+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordFrameProfile(DeltaLogging.scala:140)
+[2026-05-16T13:34:06.201+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordFrameProfile$(DeltaLogging.scala:138)
+[2026-05-16T13:34:06.201+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog$.recordFrameProfile(DeltaLog.scala:607)
+[2026-05-16T13:34:06.201+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.$anonfun$recordDeltaOperationInternal$1(DeltaLogging.scala:133)
+[2026-05-16T13:34:06.201+0000] {subprocess.py:93} INFO - 	at com.databricks.spark.util.DatabricksLogging.recordOperation(DatabricksLogging.scala:128)
+[2026-05-16T13:34:06.201+0000] {subprocess.py:93} INFO - 	at com.databricks.spark.util.DatabricksLogging.recordOperation$(DatabricksLogging.scala:117)
+[2026-05-16T13:34:06.201+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog$.recordOperation(DeltaLog.scala:607)
+[2026-05-16T13:34:06.201+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordDeltaOperationInternal(DeltaLogging.scala:132)
+[2026-05-16T13:34:06.202+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordDeltaOperation(DeltaLogging.scala:122)
+[2026-05-16T13:34:06.202+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.metering.DeltaLogging.recordDeltaOperation$(DeltaLogging.scala:112)
+[2026-05-16T13:34:06.202+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog$.recordDeltaOperation(DeltaLog.scala:607)
+[2026-05-16T13:34:06.202+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog$.createDeltaLog$1(DeltaLog.scala:782)
+[2026-05-16T13:34:06.202+0000] {subprocess.py:93} INFO - 	at org.apache.spark.sql.delta.DeltaLog$.$anonfun$apply$5(DeltaLog.scala:800)
+[2026-05-16T13:34:06.202+0000] {subprocess.py:93} INFO - 	at com.google.common.cache.LocalCache$LocalManualCache$1.load(LocalCache.java:4792)
+[2026-05-16T13:34:06.202+0000] {subprocess.py:93} INFO - 	at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3599)
+[2026-05-16T13:34:06.202+0000] {subprocess.py:93} INFO - 	at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2379)
+[2026-05-16T13:34:06.202+0000] {subprocess.py:93} INFO - 	... 38 more
+[2026-05-16T13:34:06.203+0000] {subprocess.py:93} INFO - Caused by: com.amazonaws.SdkClientException: Unable to execute HTTP request: Connect to localhost:9000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+[2026-05-16T13:34:06.203+0000] {subprocess.py:93} INFO - 	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.handleRetryableException(AmazonHttpClient.java:1219)
+[2026-05-16T13:34:06.203+0000] {subprocess.py:93} INFO - 	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeHelper(AmazonHttpClient.java:1165)
+[2026-05-16T13:34:06.203+0000] {subprocess.py:93} INFO - 	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.doExecute(AmazonHttpClient.java:814)
+[2026-05-16T13:34:06.203+0000] {subprocess.py:93} INFO - 	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeWithTimer(AmazonHttpClient.java:781)
+[2026-05-16T13:34:06.203+0000] {subprocess.py:93} INFO - 	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.execute(AmazonHttpClient.java:755)
+[2026-05-16T13:34:06.203+0000] {subprocess.py:93} INFO - 	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.access$500(AmazonHttpClient.java:715)
+[2026-05-16T13:34:06.204+0000] {subprocess.py:93} INFO - 	at com.amazonaws.http.AmazonHttpClient$RequestExecutionBuilderImpl.execute(AmazonHttpClient.java:697)
+[2026-05-16T13:34:06.204+0000] {subprocess.py:93} INFO - 	at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:561)
+[2026-05-16T13:34:06.204+0000] {subprocess.py:93} INFO - 	at com.amazonaws.http.AmazonHttpClient.execute(AmazonHttpClient.java:541)
+[2026-05-16T13:34:06.204+0000] {subprocess.py:93} INFO - 	at com.amazonaws.services.s3.AmazonS3Client.invoke(AmazonS3Client.java:5456)
+[2026-05-16T13:34:06.205+0000] {subprocess.py:93} INFO - 	at com.amazonaws.services.s3.AmazonS3Client.invoke(AmazonS3Client.java:5403)
+[2026-05-16T13:34:06.205+0000] {subprocess.py:93} INFO - 	at com.amazonaws.services.s3.AmazonS3Client.getObjectMetadata(AmazonS3Client.java:1372)
+[2026-05-16T13:34:06.205+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.s3a.S3AFileSystem.lambda$getObjectMetadata$10(S3AFileSystem.java:2545)
+[2026-05-16T13:34:06.205+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.s3a.Invoker.retryUntranslated(Invoker.java:414)
+[2026-05-16T13:34:06.206+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.s3a.Invoker.retryUntranslated(Invoker.java:377)
+[2026-05-16T13:34:06.206+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.s3a.S3AFileSystem.getObjectMetadata(S3AFileSystem.java:2533)
+[2026-05-16T13:34:06.206+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.s3a.S3AFileSystem.getObjectMetadata(S3AFileSystem.java:2513)
+[2026-05-16T13:34:06.206+0000] {subprocess.py:93} INFO - 	at org.apache.hadoop.fs.s3a.S3AFileSystem.s3GetFileStatus(S3AFileSystem.java:3776)
+[2026-05-16T13:34:06.207+0000] {subprocess.py:93} INFO - 	... 135 more
+[2026-05-16T13:34:06.207+0000] {subprocess.py:93} INFO - Caused by: com.amazonaws.thirdparty.apache.http.conn.HttpHostConnectException: Connect to localhost:9000 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused
+[2026-05-16T13:34:06.207+0000] {subprocess.py:93} INFO - 	at com.amazonaws.thirdparty.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+[2026-05-16T13:34:06.207+0000] {subprocess.py:93} INFO - 	at com.amazonaws.thirdparty.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+[2026-05-16T13:34:06.208+0000] {subprocess.py:93} INFO - 	at jdk.internal.reflect.GeneratedMethodAccessor23.invoke(Unknown Source)
+[2026-05-16T13:34:06.208+0000] {subprocess.py:93} INFO - 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2026-05-16T13:34:06.208+0000] {subprocess.py:93} INFO - 	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+[2026-05-16T13:34:06.208+0000] {subprocess.py:93} INFO - 	at com.amazonaws.http.conn.ClientConnectionManagerFactory$Handler.invoke(ClientConnectionManagerFactory.java:76)
+[2026-05-16T13:34:06.208+0000] {subprocess.py:93} INFO - 	at com.amazonaws.http.conn.$Proxy33.connect(Unknown Source)
+[2026-05-16T13:34:06.209+0000] {subprocess.py:93} INFO - 	at com.amazonaws.thirdparty.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+[2026-05-16T13:34:06.209+0000] {subprocess.py:93} INFO - 	at com.amazonaws.thirdparty.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+[2026-05-16T13:34:06.209+0000] {subprocess.py:93} INFO - 	at com.amazonaws.thirdparty.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+[2026-05-16T13:34:06.209+0000] {subprocess.py:93} INFO - 	at com.amazonaws.thirdparty.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+[2026-05-16T13:34:06.209+0000] {subprocess.py:93} INFO - 	at com.amazonaws.thirdparty.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+[2026-05-16T13:34:06.209+0000] {subprocess.py:93} INFO - 	at com.amazonaws.thirdparty.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+[2026-05-16T13:34:06.210+0000] {subprocess.py:93} INFO - 	at com.amazonaws.http.apache.client.impl.SdkHttpClient.execute(SdkHttpClient.java:72)
+[2026-05-16T13:34:06.210+0000] {subprocess.py:93} INFO - 	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeOneRequest(AmazonHttpClient.java:1346)
+[2026-05-16T13:34:06.210+0000] {subprocess.py:93} INFO - 	at com.amazonaws.http.AmazonHttpClient$RequestExecutor.executeHelper(AmazonHttpClient.java:1157)
+[2026-05-16T13:34:06.210+0000] {subprocess.py:93} INFO - 	... 151 more
+[2026-05-16T13:34:06.210+0000] {subprocess.py:93} INFO - Caused by: java.net.ConnectException: Connection refused
+[2026-05-16T13:34:06.211+0000] {subprocess.py:93} INFO - 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+[2026-05-16T13:34:06.211+0000] {subprocess.py:93} INFO - 	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:684)
+[2026-05-16T13:34:06.211+0000] {subprocess.py:93} INFO - 	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+[2026-05-16T13:34:06.211+0000] {subprocess.py:93} INFO - 	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:602)
+[2026-05-16T13:34:06.211+0000] {subprocess.py:93} INFO - 	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+[2026-05-16T13:34:06.212+0000] {subprocess.py:93} INFO - 	at java.base/java.net.Socket.connect(Socket.java:633)
+[2026-05-16T13:34:06.212+0000] {subprocess.py:93} INFO - 	at com.amazonaws.thirdparty.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+[2026-05-16T13:34:06.212+0000] {subprocess.py:93} INFO - 	at com.amazonaws.thirdparty.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+[2026-05-16T13:34:06.212+0000] {subprocess.py:93} INFO - 	... 166 more
+[2026-05-16T13:34:06.212+0000] {subprocess.py:93} INFO - 
+[2026-05-16T13:34:06.778+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2026-05-16T13:34:06.807+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-05-16T13:34:06.812+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=supply_chain_pipeline, task_id=quality_checks, execution_date=20260516T123330, start_date=20260516T130827, end_date=20260516T133406
+[2026-05-16T13:34:06.833+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 52 for task quality_checks (Bash command failed. The command returned a non-zero exit code 1.; 1508)
+[2026-05-16T13:34:06.871+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-05-16T13:34:06.891+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

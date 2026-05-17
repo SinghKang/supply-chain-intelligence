@@ -1,0 +1,130 @@
+[2026-05-16T13:24:36.122+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: supply_chain_pipeline.gold_transformation manual__2026-05-16T13:22:18+00:00 [queued]>
+[2026-05-16T13:24:36.127+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: supply_chain_pipeline.gold_transformation manual__2026-05-16T13:22:18+00:00 [queued]>
+[2026-05-16T13:24:36.128+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2026-05-16T13:24:36.136+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): gold_transformation> on 2026-05-16 13:22:18+00:00
+[2026-05-16T13:24:36.140+0000] {standard_task_runner.py:60} INFO - Started process 2234 to run task
+[2026-05-16T13:24:36.150+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'supply_chain_pipeline', 'gold_transformation', 'manual__2026-05-16T13:22:18+00:00', '--job-id', '56', '--raw', '--subdir', 'DAGS_FOLDER/supply_chain_pipeline.py', '--cfg-path', '/tmp/tmpk924wplj']
+[2026-05-16T13:24:36.153+0000] {standard_task_runner.py:88} INFO - Job 56: Subtask gold_transformation
+[2026-05-16T13:24:36.194+0000] {task_command.py:423} INFO - Running <TaskInstance: supply_chain_pipeline.gold_transformation manual__2026-05-16T13:22:18+00:00 [running]> on host 77266b8302bc
+[2026-05-16T13:24:36.256+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='lovepreet' AIRFLOW_CTX_DAG_ID='supply_chain_pipeline' AIRFLOW_CTX_TASK_ID='gold_transformation' AIRFLOW_CTX_EXECUTION_DATE='2026-05-16T13:22:18+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-16T13:22:18+00:00'
+[2026-05-16T13:24:36.257+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-05-16T13:24:36.258+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /opt/airflow/processing/gold_transform.py']
+[2026-05-16T13:24:36.264+0000] {subprocess.py:86} INFO - Output:
+[2026-05-16T13:24:37.403+0000] {subprocess.py:93} INFO - :: loading settings :: url = jar:file:/home/airflow/.local/lib/python3.8/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2026-05-16T13:24:37.446+0000] {subprocess.py:93} INFO - Ivy Default Cache set to: /home/airflow/.ivy2/cache
+[2026-05-16T13:24:37.447+0000] {subprocess.py:93} INFO - The jars for the packages stored in: /home/airflow/.ivy2/jars
+[2026-05-16T13:24:37.449+0000] {subprocess.py:93} INFO - io.delta#delta-spark_2.12 added as a dependency
+[2026-05-16T13:24:37.449+0000] {subprocess.py:93} INFO - org.apache.hadoop#hadoop-aws added as a dependency
+[2026-05-16T13:24:37.450+0000] {subprocess.py:93} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-89131d4d-475e-4565-9b53-f21af94b713c;1.0
+[2026-05-16T13:24:37.450+0000] {subprocess.py:93} INFO - 	confs: [default]
+[2026-05-16T13:24:37.521+0000] {subprocess.py:93} INFO - 	found io.delta#delta-spark_2.12;3.0.0 in central
+[2026-05-16T13:24:37.538+0000] {subprocess.py:93} INFO - 	found io.delta#delta-storage;3.0.0 in central
+[2026-05-16T13:24:37.551+0000] {subprocess.py:93} INFO - 	found org.antlr#antlr4-runtime;4.9.3 in central
+[2026-05-16T13:24:37.583+0000] {subprocess.py:93} INFO - 	found org.apache.hadoop#hadoop-aws;3.3.4 in central
+[2026-05-16T13:24:37.594+0000] {subprocess.py:93} INFO - 	found com.amazonaws#aws-java-sdk-bundle;1.12.262 in central
+[2026-05-16T13:24:37.604+0000] {subprocess.py:93} INFO - 	found org.wildfly.openssl#wildfly-openssl;1.0.7.Final in central
+[2026-05-16T13:24:37.625+0000] {subprocess.py:93} INFO - :: resolution report :: resolve 161ms :: artifacts dl 14ms
+[2026-05-16T13:24:37.630+0000] {subprocess.py:93} INFO - 	:: modules in use:
+[2026-05-16T13:24:37.634+0000] {subprocess.py:93} INFO - 	com.amazonaws#aws-java-sdk-bundle;1.12.262 from central in [default]
+[2026-05-16T13:24:37.636+0000] {subprocess.py:93} INFO - 	io.delta#delta-spark_2.12;3.0.0 from central in [default]
+[2026-05-16T13:24:37.639+0000] {subprocess.py:93} INFO - 	io.delta#delta-storage;3.0.0 from central in [default]
+[2026-05-16T13:24:37.641+0000] {subprocess.py:93} INFO - 	org.antlr#antlr4-runtime;4.9.3 from central in [default]
+[2026-05-16T13:24:37.641+0000] {subprocess.py:93} INFO - 	org.apache.hadoop#hadoop-aws;3.3.4 from central in [default]
+[2026-05-16T13:24:37.643+0000] {subprocess.py:93} INFO - 	org.wildfly.openssl#wildfly-openssl;1.0.7.Final from central in [default]
+[2026-05-16T13:24:37.644+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2026-05-16T13:24:37.644+0000] {subprocess.py:93} INFO - 	|                  |            modules            ||   artifacts   |
+[2026-05-16T13:24:37.644+0000] {subprocess.py:93} INFO - 	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2026-05-16T13:24:37.645+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2026-05-16T13:24:37.645+0000] {subprocess.py:93} INFO - 	|      default     |   6   |   0   |   0   |   0   ||   6   |   0   |
+[2026-05-16T13:24:37.645+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2026-05-16T13:24:37.646+0000] {subprocess.py:93} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-89131d4d-475e-4565-9b53-f21af94b713c
+[2026-05-16T13:24:37.646+0000] {subprocess.py:93} INFO - 	confs: [default]
+[2026-05-16T13:24:37.651+0000] {subprocess.py:93} INFO - 	0 artifacts copied, 6 already retrieved (0kB/9ms)
+[2026-05-16T13:24:37.798+0000] {subprocess.py:93} INFO - 26/05/16 13:24:37 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2026-05-16T13:24:37.916+0000] {subprocess.py:93} INFO - Setting default log level to "WARN".
+[2026-05-16T13:24:37.917+0000] {subprocess.py:93} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2026-05-16T13:24:38.454+0000] {subprocess.py:93} INFO - 26/05/16 13:24:38 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+[2026-05-16T13:25:09.500+0000] {subprocess.py:93} INFO - [Stage 3:>                                                         (0 + 8) / 50][Stage 3:=====>                                                   (5 + 10) / 50][Stage 3:============>                                            (11 + 8) / 50][Stage 3:=================>                                      (16 + 10) / 50][Stage 3:======================>                                  (20 + 7) / 50][Stage 3:============================>                            (25 + 8) / 50][Stage 3:====================================>                    (32 + 8) / 50][Stage 3:==============================================>          (41 + 8) / 50]                                                                                [Stage 9:=====================================>                   (33 + 8) / 50]                                                                                [Stage 25:==================================>                     (31 + 8) / 50][Stage 25:===========================================>            (39 + 8) / 50]                                                                                [Stage 34:====================================>                   (33 + 8) / 50][Stage 34:==================================================>     (45 + 5) / 50]                                                                                [Stage 61:======================================>                 (34 + 8) / 50]                                                                                [Stage 70:===================================>                    (32 + 8) / 50]                                                                                [Stage 95:============================================>           (40 + 8) / 50]                                                                                [Stage 135:===================================================>   (47 + 3) / 50]                                                                                ✅ Spark Session started!
+[2026-05-16T13:25:09.504+0000] {subprocess.py:93} INFO - Starting Gold transformation job...
+[2026-05-16T13:25:09.504+0000] {subprocess.py:93} INFO - 
+[2026-05-16T13:25:09.504+0000] {subprocess.py:93} INFO - Reading Silver layer...
+[2026-05-16T13:25:09.504+0000] {subprocess.py:93} INFO - Silver records: 100
+[2026-05-16T13:25:09.505+0000] {subprocess.py:93} INFO - Building carrier performance KPI...
+[2026-05-16T13:25:09.505+0000] {subprocess.py:93} INFO - ✅ Carrier performance written!
+[2026-05-16T13:25:09.505+0000] {subprocess.py:93} INFO - +---------+---------------+-----------------+-------------------+------------------+--------------+--------------------+
+[2026-05-16T13:25:09.506+0000] {subprocess.py:93} INFO - |  carrier|total_shipments|delayed_shipments|delivered_shipments|     avg_weight_kg|delay_rate_pct|        processed_at|
+[2026-05-16T13:25:09.506+0000] {subprocess.py:93} INFO - +---------+---------------+-----------------+-------------------+------------------+--------------+--------------------+
+[2026-05-16T13:25:09.506+0000] {subprocess.py:93} INFO - |Delhivery|             22|                6|                  4| 26.84818181818182|         27.27|2026-05-16 13:24:...|
+[2026-05-16T13:25:09.506+0000] {subprocess.py:93} INFO - |     DTDC|             14|                3|                  2|21.997142857142855|         21.43|2026-05-16 13:24:...|
+[2026-05-16T13:25:09.507+0000] {subprocess.py:93} INFO - |    FedEx|             19|                4|                  5|26.403157894736843|         21.05|2026-05-16 13:24:...|
+[2026-05-16T13:25:09.507+0000] {subprocess.py:93} INFO - |      DHL|             15|                3|                  2|22.094666666666665|          20.0|2026-05-16 13:24:...|
+[2026-05-16T13:25:09.507+0000] {subprocess.py:93} INFO - |Blue Dart|             30|                5|                  6|26.021666666666665|         16.67|2026-05-16 13:24:...|
+[2026-05-16T13:25:09.507+0000] {subprocess.py:93} INFO - +---------+---------------+-----------------+-------------------+------------------+--------------+--------------------+
+[2026-05-16T13:25:09.507+0000] {subprocess.py:93} INFO - 
+[2026-05-16T13:25:09.508+0000] {subprocess.py:93} INFO - Building shipment status summary...
+[2026-05-16T13:25:09.508+0000] {subprocess.py:93} INFO - ✅ Status summary written!
+[2026-05-16T13:25:09.508+0000] {subprocess.py:93} INFO - +----------------+---------------+-------------+--------------------+
+[2026-05-16T13:25:09.508+0000] {subprocess.py:93} INFO - |          status|total_shipments|unique_orders|        processed_at|
+[2026-05-16T13:25:09.509+0000] {subprocess.py:93} INFO - +----------------+---------------+-------------+--------------------+
+[2026-05-16T13:25:09.509+0000] {subprocess.py:93} INFO - |         DELAYED|             21|           21|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.509+0000] {subprocess.py:93} INFO - |       DELIVERED|             19|           19|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.509+0000] {subprocess.py:93} INFO - |OUT_FOR_DELIVERY|             17|           17|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.509+0000] {subprocess.py:93} INFO - |    ORDER_PLACED|             13|           13|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.510+0000] {subprocess.py:93} INFO - |         SHIPPED|             12|           12|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.510+0000] {subprocess.py:93} INFO - |      PROCESSING|             10|           10|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.510+0000] {subprocess.py:93} INFO - |      IN_TRANSIT|              8|            8|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.510+0000] {subprocess.py:93} INFO - +----------------+---------------+-------------+--------------------+
+[2026-05-16T13:25:09.511+0000] {subprocess.py:93} INFO - 
+[2026-05-16T13:25:09.511+0000] {subprocess.py:93} INFO - Building route analysis...
+[2026-05-16T13:25:09.511+0000] {subprocess.py:93} INFO - ✅ Route analysis written!
+[2026-05-16T13:25:09.511+0000] {subprocess.py:93} INFO - +---------+-----------+---------------+-----------------+--------------+------------------+--------------------+
+[2026-05-16T13:25:09.512+0000] {subprocess.py:93} INFO - |   origin|destination|total_shipments|delayed_shipments|delay_rate_pct|     avg_weight_kg|        processed_at|
+[2026-05-16T13:25:09.512+0000] {subprocess.py:93} INFO - +---------+-----------+---------------+-----------------+--------------+------------------+--------------------+
+[2026-05-16T13:25:09.512+0000] {subprocess.py:93} INFO - |    Delhi|       Pune|              2|                1|          50.0|             34.46|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.512+0000] {subprocess.py:93} INFO - |Hyderabad|     Jaipur|              5|                2|          40.0|            31.068|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.513+0000] {subprocess.py:93} INFO - |   Mumbai|  Ahmedabad|              5|                2|          40.0|            19.778|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.513+0000] {subprocess.py:93} INFO - |Bengaluru|    Lucknow|              6|                2|         33.33|22.409999999999997|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.513+0000] {subprocess.py:93} INFO - |   Mumbai|    Lucknow|              3|                1|         33.33|21.180000000000003|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.513+0000] {subprocess.py:93} INFO - |Bengaluru|    Kolkata|              6|                2|         33.33|29.525000000000002|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.513+0000] {subprocess.py:93} INFO - |Bengaluru|  Ahmedabad|              6|                2|         33.33|26.665000000000003|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.513+0000] {subprocess.py:93} INFO - |Bengaluru|       Pune|              6|                2|         33.33|26.103333333333335|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.514+0000] {subprocess.py:93} INFO - |    Delhi|     Jaipur|              6|                2|         33.33|23.761666666666667|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.514+0000] {subprocess.py:93} INFO - |  Chennai|     Jaipur|              7|                2|         28.57|35.137142857142855|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.514+0000] {subprocess.py:93} INFO - |  Chennai|    Lucknow|              4|                1|          25.0|           29.0925|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.514+0000] {subprocess.py:93} INFO - |  Chennai|       Pune|              4|                1|          25.0|           25.4725|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.514+0000] {subprocess.py:93} INFO - |Hyderabad|    Lucknow|              4|                1|          25.0|21.737499999999997|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.515+0000] {subprocess.py:93} INFO - |  Chennai|    Kolkata|              4|                0|           0.0|             27.91|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.515+0000] {subprocess.py:93} INFO - |Bengaluru|     Jaipur|              3|                0|           0.0|15.456666666666665|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.515+0000] {subprocess.py:93} INFO - |   Mumbai|       Pune|              6|                0|           0.0|23.933333333333334|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.515+0000] {subprocess.py:93} INFO - |    Delhi|    Kolkata|              3|                0|           0.0|27.206666666666667|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.515+0000] {subprocess.py:93} INFO - |Hyderabad|  Ahmedabad|              7|                0|           0.0|20.454285714285714|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.516+0000] {subprocess.py:93} INFO - |   Mumbai|     Jaipur|              1|                0|           0.0|              5.07|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.516+0000] {subprocess.py:93} INFO - |    Delhi|  Ahmedabad|              2|                0|           0.0|32.894999999999996|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.516+0000] {subprocess.py:93} INFO - +---------+-----------+---------------+-----------------+--------------+------------------+--------------------+
+[2026-05-16T13:25:09.516+0000] {subprocess.py:93} INFO - only showing top 20 rows
+[2026-05-16T13:25:09.516+0000] {subprocess.py:93} INFO - 
+[2026-05-16T13:25:09.517+0000] {subprocess.py:93} INFO - Building product shipment summary...
+[2026-05-16T13:25:09.517+0000] {subprocess.py:93} INFO - ✅ Product summary written!
+[2026-05-16T13:25:09.517+0000] {subprocess.py:93} INFO - +----------+---------------+--------------+-----------------+--------------+------------------+--------------------+
+[2026-05-16T13:25:09.517+0000] {subprocess.py:93} INFO - |   product|total_shipments|total_quantity|delayed_shipments|delay_rate_pct|     avg_weight_kg|        processed_at|
+[2026-05-16T13:25:09.517+0000] {subprocess.py:93} INFO - +----------+---------------+--------------+-----------------+--------------+------------------+--------------------+
+[2026-05-16T13:25:09.517+0000] {subprocess.py:93} INFO - |     Phone|             26|           153|                4|         15.38|26.482692307692307|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.518+0000] {subprocess.py:93} INFO - |    Camera|             16|            81|                5|         31.25|          24.11125|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.518+0000] {subprocess.py:93} INFO - |   Monitor|             15|            74|                2|         13.33|30.901333333333334|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.518+0000] {subprocess.py:93} INFO - |    Laptop|             14|            66|                2|         14.29|25.883571428571425|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.518+0000] {subprocess.py:93} INFO - |Headphones|             11|            60|                2|         18.18|19.911818181818184|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.518+0000] {subprocess.py:93} INFO - |    Tablet|              9|            50|                4|         44.44|20.915555555555553|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.518+0000] {subprocess.py:93} INFO - |  Keyboard|              9|            42|                2|         22.22| 22.76222222222222|2026-05-16 13:25:...|
+[2026-05-16T13:25:09.519+0000] {subprocess.py:93} INFO - +----------+---------------+--------------+-----------------+--------------+------------------+--------------------+
+[2026-05-16T13:25:09.519+0000] {subprocess.py:93} INFO - 
+[2026-05-16T13:25:09.519+0000] {subprocess.py:93} INFO - 
+[2026-05-16T13:25:09.519+0000] {subprocess.py:93} INFO - 🎉 Gold layer complete!
+[2026-05-16T13:25:09.519+0000] {subprocess.py:93} INFO - KPIs written:
+[2026-05-16T13:25:09.520+0000] {subprocess.py:93} INFO -   - carrier_performance
+[2026-05-16T13:25:09.520+0000] {subprocess.py:93} INFO -   - shipment_status_summary
+[2026-05-16T13:25:09.520+0000] {subprocess.py:93} INFO -   - route_analysis
+[2026-05-16T13:25:09.520+0000] {subprocess.py:93} INFO -   - product_summary
+[2026-05-16T13:25:10.005+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-05-16T13:25:10.057+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=supply_chain_pipeline, task_id=gold_transformation, execution_date=20260516T132218, start_date=20260516T132436, end_date=20260516T132510
+[2026-05-16T13:25:10.102+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-05-16T13:25:10.124+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

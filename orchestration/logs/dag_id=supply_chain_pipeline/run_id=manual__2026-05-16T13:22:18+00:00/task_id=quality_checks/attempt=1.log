@@ -1,0 +1,73 @@
+[2026-05-16T13:25:10.591+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: supply_chain_pipeline.quality_checks manual__2026-05-16T13:22:18+00:00 [queued]>
+[2026-05-16T13:25:10.597+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: supply_chain_pipeline.quality_checks manual__2026-05-16T13:22:18+00:00 [queued]>
+[2026-05-16T13:25:10.597+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2026-05-16T13:25:10.605+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): quality_checks> on 2026-05-16 13:22:18+00:00
+[2026-05-16T13:25:10.610+0000] {standard_task_runner.py:60} INFO - Started process 2786 to run task
+[2026-05-16T13:25:10.612+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'supply_chain_pipeline', 'quality_checks', 'manual__2026-05-16T13:22:18+00:00', '--job-id', '57', '--raw', '--subdir', 'DAGS_FOLDER/supply_chain_pipeline.py', '--cfg-path', '/tmp/tmp3i3973o5']
+[2026-05-16T13:25:10.613+0000] {standard_task_runner.py:88} INFO - Job 57: Subtask quality_checks
+[2026-05-16T13:25:10.645+0000] {task_command.py:423} INFO - Running <TaskInstance: supply_chain_pipeline.quality_checks manual__2026-05-16T13:22:18+00:00 [running]> on host 77266b8302bc
+[2026-05-16T13:25:10.700+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='lovepreet' AIRFLOW_CTX_DAG_ID='supply_chain_pipeline' AIRFLOW_CTX_TASK_ID='quality_checks' AIRFLOW_CTX_EXECUTION_DATE='2026-05-16T13:22:18+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-16T13:22:18+00:00'
+[2026-05-16T13:25:10.701+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-05-16T13:25:10.701+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /opt/airflow/quality/silver_quality_checks.py']
+[2026-05-16T13:25:10.708+0000] {subprocess.py:86} INFO - Output:
+[2026-05-16T13:25:12.143+0000] {subprocess.py:93} INFO - :: loading settings :: url = jar:file:/home/airflow/.local/lib/python3.8/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2026-05-16T13:25:12.205+0000] {subprocess.py:93} INFO - Ivy Default Cache set to: /home/airflow/.ivy2/cache
+[2026-05-16T13:25:12.206+0000] {subprocess.py:93} INFO - The jars for the packages stored in: /home/airflow/.ivy2/jars
+[2026-05-16T13:25:12.208+0000] {subprocess.py:93} INFO - io.delta#delta-spark_2.12 added as a dependency
+[2026-05-16T13:25:12.208+0000] {subprocess.py:93} INFO - org.apache.hadoop#hadoop-aws added as a dependency
+[2026-05-16T13:25:12.209+0000] {subprocess.py:93} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-df5e87e9-8118-44d0-bd57-afae2b6ffee6;1.0
+[2026-05-16T13:25:12.209+0000] {subprocess.py:93} INFO - 	confs: [default]
+[2026-05-16T13:25:12.292+0000] {subprocess.py:93} INFO - 	found io.delta#delta-spark_2.12;3.0.0 in central
+[2026-05-16T13:25:12.307+0000] {subprocess.py:93} INFO - 	found io.delta#delta-storage;3.0.0 in central
+[2026-05-16T13:25:12.320+0000] {subprocess.py:93} INFO - 	found org.antlr#antlr4-runtime;4.9.3 in central
+[2026-05-16T13:25:12.351+0000] {subprocess.py:93} INFO - 	found org.apache.hadoop#hadoop-aws;3.3.4 in central
+[2026-05-16T13:25:12.362+0000] {subprocess.py:93} INFO - 	found com.amazonaws#aws-java-sdk-bundle;1.12.262 in central
+[2026-05-16T13:25:12.374+0000] {subprocess.py:93} INFO - 	found org.wildfly.openssl#wildfly-openssl;1.0.7.Final in central
+[2026-05-16T13:25:12.390+0000] {subprocess.py:93} INFO - :: resolution report :: resolve 174ms :: artifacts dl 8ms
+[2026-05-16T13:25:12.391+0000] {subprocess.py:93} INFO - 	:: modules in use:
+[2026-05-16T13:25:12.391+0000] {subprocess.py:93} INFO - 	com.amazonaws#aws-java-sdk-bundle;1.12.262 from central in [default]
+[2026-05-16T13:25:12.391+0000] {subprocess.py:93} INFO - 	io.delta#delta-spark_2.12;3.0.0 from central in [default]
+[2026-05-16T13:25:12.392+0000] {subprocess.py:93} INFO - 	io.delta#delta-storage;3.0.0 from central in [default]
+[2026-05-16T13:25:12.392+0000] {subprocess.py:93} INFO - 	org.antlr#antlr4-runtime;4.9.3 from central in [default]
+[2026-05-16T13:25:12.392+0000] {subprocess.py:93} INFO - 	org.apache.hadoop#hadoop-aws;3.3.4 from central in [default]
+[2026-05-16T13:25:12.392+0000] {subprocess.py:93} INFO - 	org.wildfly.openssl#wildfly-openssl;1.0.7.Final from central in [default]
+[2026-05-16T13:25:12.393+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2026-05-16T13:25:12.393+0000] {subprocess.py:93} INFO - 	|                  |            modules            ||   artifacts   |
+[2026-05-16T13:25:12.393+0000] {subprocess.py:93} INFO - 	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2026-05-16T13:25:12.394+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2026-05-16T13:25:12.396+0000] {subprocess.py:93} INFO - 	|      default     |   6   |   0   |   0   |   0   ||   6   |   0   |
+[2026-05-16T13:25:12.396+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2026-05-16T13:25:12.396+0000] {subprocess.py:93} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-df5e87e9-8118-44d0-bd57-afae2b6ffee6
+[2026-05-16T13:25:12.397+0000] {subprocess.py:93} INFO - 	confs: [default]
+[2026-05-16T13:25:12.399+0000] {subprocess.py:93} INFO - 	0 artifacts copied, 6 already retrieved (0kB/5ms)
+[2026-05-16T13:25:12.548+0000] {subprocess.py:93} INFO - 26/05/16 13:25:12 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2026-05-16T13:25:12.679+0000] {subprocess.py:93} INFO - Setting default log level to "WARN".
+[2026-05-16T13:25:12.680+0000] {subprocess.py:93} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2026-05-16T13:25:13.315+0000] {subprocess.py:93} INFO - 26/05/16 13:25:13 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+[2026-05-16T13:25:34.582+0000] {subprocess.py:93} INFO - [Stage 1:>                                                          (0 + 5) / 5][Stage 3:>                                                         (0 + 8) / 50][Stage 3:=========>                                                (8 + 8) / 50][Stage 3:=============>                                           (12 + 8) / 50][Stage 3:====================>                                    (18 + 8) / 50][Stage 3:=================================>                       (29 + 8) / 50][Stage 3:======================================>                  (34 + 8) / 50][Stage 3:===============================================>         (42 + 8) / 50]                                                                                [Stage 29:===================>                                    (17 + 8) / 50][Stage 29:===================================>                    (32 + 8) / 50][Stage 29:===========================================>            (39 + 8) / 50][Stage 29:===================================================>    (46 + 4) / 50]                                                                                [Stage 34:====================>                                   (18 + 9) / 50]                                                                                Reading Silver layer for quality checks...
+[2026-05-16T13:25:34.590+0000] {subprocess.py:93} INFO - Total records: 100
+[2026-05-16T13:25:34.591+0000] {subprocess.py:93} INFO - 
+[2026-05-16T13:25:34.591+0000] {subprocess.py:93} INFO - ==================================================
+[2026-05-16T13:25:34.592+0000] {subprocess.py:93} INFO - RUNNING DATA QUALITY CHECKS
+[2026-05-16T13:25:34.592+0000] {subprocess.py:93} INFO - ==================================================
+[2026-05-16T13:25:34.593+0000] {subprocess.py:93} INFO - ✅ PASS — Minimum row count >= 50 (got 100, expected >= 50)
+[2026-05-16T13:25:34.593+0000] {subprocess.py:93} INFO - ✅ PASS — No nulls in carrier (got 0, expected 0)
+[2026-05-16T13:25:34.593+0000] {subprocess.py:93} INFO - ✅ PASS — No nulls in status (got 0, expected 0)
+[2026-05-16T13:25:34.594+0000] {subprocess.py:93} INFO - ✅ PASS — No nulls in origin (got 0, expected 0)
+[2026-05-16T13:25:34.594+0000] {subprocess.py:93} INFO - ✅ PASS — No nulls in destination (got 0, expected 0)
+[2026-05-16T13:25:34.594+0000] {subprocess.py:93} INFO - ✅ PASS — All status values are valid (got 0, expected 0)
+[2026-05-16T13:25:34.595+0000] {subprocess.py:93} INFO - ✅ PASS — All weights are positive (got 2.5, expected > 0)
+[2026-05-16T13:25:34.595+0000] {subprocess.py:93} INFO - ✅ PASS — No duplicate shipment IDs (got 0 duplicates, expected 0)
+[2026-05-16T13:25:34.595+0000] {subprocess.py:93} INFO - ✅ PASS — All DQ flags are PASS (got 0, expected 0)
+[2026-05-16T13:25:34.596+0000] {subprocess.py:93} INFO - ==================================================
+[2026-05-16T13:25:34.596+0000] {subprocess.py:93} INFO - 
+[2026-05-16T13:25:34.596+0000] {subprocess.py:93} INFO - Total checks : 9
+[2026-05-16T13:25:34.597+0000] {subprocess.py:93} INFO - Passed       : 9
+[2026-05-16T13:25:34.597+0000] {subprocess.py:93} INFO - Failed       : 0
+[2026-05-16T13:25:34.597+0000] {subprocess.py:93} INFO - 
+[2026-05-16T13:25:34.597+0000] {subprocess.py:93} INFO - ✅ ALL CHECKS PASSED — data is clean!
+[2026-05-16T13:25:34.598+0000] {subprocess.py:93} INFO - ==================================================
+[2026-05-16T13:25:35.124+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-05-16T13:25:35.190+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=supply_chain_pipeline, task_id=quality_checks, execution_date=20260516T132218, start_date=20260516T132510, end_date=20260516T132535
+[2026-05-16T13:25:35.219+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-05-16T13:25:35.241+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

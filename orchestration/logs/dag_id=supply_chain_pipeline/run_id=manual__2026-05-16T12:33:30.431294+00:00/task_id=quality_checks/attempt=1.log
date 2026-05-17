@@ -1,0 +1,66 @@
+[2026-05-16T12:37:53.436+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: supply_chain_pipeline.quality_checks manual__2026-05-16T12:33:30.431294+00:00 [queued]>
+[2026-05-16T12:37:53.442+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: supply_chain_pipeline.quality_checks manual__2026-05-16T12:33:30.431294+00:00 [queued]>
+[2026-05-16T12:37:53.443+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2026-05-16T12:37:53.450+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): quality_checks> on 2026-05-16 12:33:30.431294+00:00
+[2026-05-16T12:37:53.453+0000] {standard_task_runner.py:60} INFO - Started process 1197 to run task
+[2026-05-16T12:37:53.455+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'supply_chain_pipeline', 'quality_checks', 'manual__2026-05-16T12:33:30.431294+00:00', '--job-id', '51', '--raw', '--subdir', 'DAGS_FOLDER/supply_chain_pipeline.py', '--cfg-path', '/tmp/tmpmzqt6_eb']
+[2026-05-16T12:37:53.456+0000] {standard_task_runner.py:88} INFO - Job 51: Subtask quality_checks
+[2026-05-16T12:37:53.487+0000] {task_command.py:423} INFO - Running <TaskInstance: supply_chain_pipeline.quality_checks manual__2026-05-16T12:33:30.431294+00:00 [running]> on host 77266b8302bc
+[2026-05-16T12:37:53.539+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='lovepreet' AIRFLOW_CTX_DAG_ID='supply_chain_pipeline' AIRFLOW_CTX_TASK_ID='quality_checks' AIRFLOW_CTX_EXECUTION_DATE='2026-05-16T12:33:30.431294+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-05-16T12:33:30.431294+00:00'
+[2026-05-16T12:37:53.540+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-05-16T12:37:53.541+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /opt/airflow/quality/silver_quality_checks.py']
+[2026-05-16T12:37:53.546+0000] {subprocess.py:86} INFO - Output:
+[2026-05-16T12:37:54.674+0000] {subprocess.py:93} INFO - :: loading settings :: url = jar:file:/home/airflow/.local/lib/python3.8/site-packages/pyspark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2026-05-16T12:37:54.717+0000] {subprocess.py:93} INFO - Ivy Default Cache set to: /home/airflow/.ivy2/cache
+[2026-05-16T12:37:54.717+0000] {subprocess.py:93} INFO - The jars for the packages stored in: /home/airflow/.ivy2/jars
+[2026-05-16T12:37:54.719+0000] {subprocess.py:93} INFO - io.delta#delta-spark_2.12 added as a dependency
+[2026-05-16T12:37:54.722+0000] {subprocess.py:93} INFO - org.apache.hadoop#hadoop-aws added as a dependency
+[2026-05-16T12:37:54.722+0000] {subprocess.py:93} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-50a0a166-fc86-4806-9dd5-d2b6882e3ec6;1.0
+[2026-05-16T12:37:54.722+0000] {subprocess.py:93} INFO - 	confs: [default]
+[2026-05-16T12:37:54.790+0000] {subprocess.py:93} INFO - 	found io.delta#delta-spark_2.12;3.0.0 in central
+[2026-05-16T12:37:54.807+0000] {subprocess.py:93} INFO - 	found io.delta#delta-storage;3.0.0 in central
+[2026-05-16T12:37:54.820+0000] {subprocess.py:93} INFO - 	found org.antlr#antlr4-runtime;4.9.3 in central
+[2026-05-16T12:37:54.855+0000] {subprocess.py:93} INFO - 	found org.apache.hadoop#hadoop-aws;3.3.4 in central
+[2026-05-16T12:37:54.866+0000] {subprocess.py:93} INFO - 	found com.amazonaws#aws-java-sdk-bundle;1.12.262 in central
+[2026-05-16T12:37:54.878+0000] {subprocess.py:93} INFO - 	found org.wildfly.openssl#wildfly-openssl;1.0.7.Final in central
+[2026-05-16T12:37:54.893+0000] {subprocess.py:93} INFO - :: resolution report :: resolve 166ms :: artifacts dl 7ms
+[2026-05-16T12:37:54.895+0000] {subprocess.py:93} INFO - 	:: modules in use:
+[2026-05-16T12:37:54.896+0000] {subprocess.py:93} INFO - 	com.amazonaws#aws-java-sdk-bundle;1.12.262 from central in [default]
+[2026-05-16T12:37:54.896+0000] {subprocess.py:93} INFO - 	io.delta#delta-spark_2.12;3.0.0 from central in [default]
+[2026-05-16T12:37:54.896+0000] {subprocess.py:93} INFO - 	io.delta#delta-storage;3.0.0 from central in [default]
+[2026-05-16T12:37:54.896+0000] {subprocess.py:93} INFO - 	org.antlr#antlr4-runtime;4.9.3 from central in [default]
+[2026-05-16T12:37:54.896+0000] {subprocess.py:93} INFO - 	org.apache.hadoop#hadoop-aws;3.3.4 from central in [default]
+[2026-05-16T12:37:54.896+0000] {subprocess.py:93} INFO - 	org.wildfly.openssl#wildfly-openssl;1.0.7.Final from central in [default]
+[2026-05-16T12:37:54.896+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2026-05-16T12:37:54.897+0000] {subprocess.py:93} INFO - 	|                  |            modules            ||   artifacts   |
+[2026-05-16T12:37:54.897+0000] {subprocess.py:93} INFO - 	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2026-05-16T12:37:54.897+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2026-05-16T12:37:54.897+0000] {subprocess.py:93} INFO - 	|      default     |   6   |   0   |   0   |   0   ||   6   |   0   |
+[2026-05-16T12:37:54.897+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2026-05-16T12:37:54.899+0000] {subprocess.py:93} INFO - :: retrieving :: org.apache.spark#spark-submit-parent-50a0a166-fc86-4806-9dd5-d2b6882e3ec6
+[2026-05-16T12:37:54.899+0000] {subprocess.py:93} INFO - 	confs: [default]
+[2026-05-16T12:37:54.904+0000] {subprocess.py:93} INFO - 	0 artifacts copied, 6 already retrieved (0kB/4ms)
+[2026-05-16T12:37:55.014+0000] {subprocess.py:93} INFO - 26/05/16 12:37:55 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2026-05-16T12:37:55.126+0000] {subprocess.py:93} INFO - Setting default log level to "WARN".
+[2026-05-16T12:37:55.127+0000] {subprocess.py:93} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2026-05-16T13:02:48.989+0000] {local_task_job_runner.py:302} WARNING - State of this instance has been externally set to up_for_retry. Terminating instance.
+[2026-05-16T13:02:48.994+0000] {process_utils.py:131} INFO - Sending 15 to group 1197. PIDs of all processes in the group: [1198, 1207, 1197]
+[2026-05-16T13:02:48.994+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 1197
+[2026-05-16T13:02:48.996+0000] {taskinstance.py:2450} ERROR - Received SIGTERM. Terminating subprocesses.
+[2026-05-16T13:02:49.000+0000] {subprocess.py:104} INFO - Sending SIGTERM signal to process group
+[2026-05-16T13:02:49.045+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 203, in execute
+    result = self.subprocess_hook.run_command(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/hooks/subprocess.py", line 91, in run_command
+    for raw_line in iter(self.sub_process.stdout.readline, b""):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 2452, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2026-05-16T13:02:49.050+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=supply_chain_pipeline, task_id=quality_checks, execution_date=20260516T123330, start_date=20260516T123753, end_date=20260516T130249
+[2026-05-16T13:02:49.072+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 51 for task quality_checks (Task received SIGTERM signal; 1197)
+[2026-05-16T13:02:49.092+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=1198, status='terminated', started='12:37:53') (1198) terminated with exit code None
+[2026-05-16T13:02:49.093+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=1197, status='terminated', exitcode=1, started='12:37:52') (1197) terminated with exit code 1
+[2026-05-16T13:02:49.629+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=1207, status='terminated', started='12:37:53') (1207) terminated with exit code None

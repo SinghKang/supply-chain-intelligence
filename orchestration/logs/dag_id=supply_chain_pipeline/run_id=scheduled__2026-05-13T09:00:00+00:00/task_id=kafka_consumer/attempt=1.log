@@ -1,0 +1,107 @@
+[2026-05-14T12:05:33.879+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: supply_chain_pipeline.kafka_consumer scheduled__2026-05-13T09:00:00+00:00 [queued]>
+[2026-05-14T12:05:33.887+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: supply_chain_pipeline.kafka_consumer scheduled__2026-05-13T09:00:00+00:00 [queued]>
+[2026-05-14T12:05:33.891+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2026-05-14T12:05:33.904+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): kafka_consumer> on 2026-05-13 09:00:00+00:00
+[2026-05-14T12:05:33.908+0000] {standard_task_runner.py:60} INFO - Started process 209 to run task
+[2026-05-14T12:05:33.910+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'supply_chain_pipeline', 'kafka_consumer', 'scheduled__2026-05-13T09:00:00+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/supply_chain_pipeline.py', '--cfg-path', '/tmp/tmpgh2cr9v0']
+[2026-05-14T12:05:33.912+0000] {standard_task_runner.py:88} INFO - Job 30: Subtask kafka_consumer
+[2026-05-14T12:05:33.954+0000] {task_command.py:423} INFO - Running <TaskInstance: supply_chain_pipeline.kafka_consumer scheduled__2026-05-13T09:00:00+00:00 [running]> on host 25ee09023a37
+[2026-05-14T12:05:34.010+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='lovepreet' AIRFLOW_CTX_DAG_ID='supply_chain_pipeline' AIRFLOW_CTX_TASK_ID='kafka_consumer' AIRFLOW_CTX_EXECUTION_DATE='2026-05-13T09:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-13T09:00:00+00:00'
+[2026-05-14T12:05:34.012+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-05-14T12:05:34.013+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /opt/airflow/ingestion/kafka_consumer.py']
+[2026-05-14T12:05:34.018+0000] {subprocess.py:86} INFO - Output:
+[2026-05-14T12:06:05.111+0000] {subprocess.py:93} INFO - Starting consumer...
+[2026-05-14T12:06:05.115+0000] {subprocess.py:93} INFO - Topic: shipment-events
+[2026-05-14T12:06:05.115+0000] {subprocess.py:93} INFO - Writing to: MinIO Bronze bucket
+[2026-05-14T12:06:05.116+0000] {subprocess.py:93} INFO - 
+[2026-05-14T12:06:05.116+0000] {subprocess.py:93} INFO - Consumed: Order 8061 | Tablet | PROCESSING
+[2026-05-14T12:06:05.116+0000] {subprocess.py:93} INFO - Consumed: Order 5197 | Phone | SHIPPED
+[2026-05-14T12:06:05.116+0000] {subprocess.py:93} INFO - Consumed: Order 4648 | Laptop | DELIVERED
+[2026-05-14T12:06:05.116+0000] {subprocess.py:93} INFO - Consumed: Order 1120 | Keyboard | PROCESSING
+[2026-05-14T12:06:05.117+0000] {subprocess.py:93} INFO - Consumed: Order 3123 | Laptop | DELIVERED
+[2026-05-14T12:06:05.117+0000] {subprocess.py:93} INFO - Consumed: Order 8747 | Keyboard | IN_TRANSIT
+[2026-05-14T12:06:05.117+0000] {subprocess.py:93} INFO - Consumed: Order 7324 | Tablet | SHIPPED
+[2026-05-14T12:06:05.117+0000] {subprocess.py:93} INFO - Consumed: Order 4393 | Laptop | IN_TRANSIT
+[2026-05-14T12:06:05.118+0000] {subprocess.py:93} INFO - Consumed: Order 7059 | Camera | PROCESSING
+[2026-05-14T12:06:05.118+0000] {subprocess.py:93} INFO - Consumed: Order 2389 | Headphones | DELAYED
+[2026-05-14T12:06:05.118+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2026-05-14T12:06:05.119+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connection.py", line 174, in _new_conn
+[2026-05-14T12:06:05.119+0000] {subprocess.py:93} INFO -     conn = connection.create_connection(
+[2026-05-14T12:06:05.119+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 95, in create_connection
+[2026-05-14T12:06:05.120+0000] {subprocess.py:93} INFO -     raise err
+[2026-05-14T12:06:05.120+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/util/connection.py", line 85, in create_connection
+[2026-05-14T12:06:05.120+0000] {subprocess.py:93} INFO -     sock.connect(sa)
+[2026-05-14T12:06:05.121+0000] {subprocess.py:93} INFO - ConnectionRefusedError: [Errno 111] Connection refused
+[2026-05-14T12:06:05.121+0000] {subprocess.py:93} INFO - 
+[2026-05-14T12:06:05.121+0000] {subprocess.py:93} INFO - During handling of the above exception, another exception occurred:
+[2026-05-14T12:06:05.121+0000] {subprocess.py:93} INFO - 
+[2026-05-14T12:06:05.122+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2026-05-14T12:06:05.122+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 715, in urlopen
+[2026-05-14T12:06:05.122+0000] {subprocess.py:93} INFO -     httplib_response = self._make_request(
+[2026-05-14T12:06:05.122+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 416, in _make_request
+[2026-05-14T12:06:05.123+0000] {subprocess.py:93} INFO -     conn.request(method, url, **httplib_request_kw)
+[2026-05-14T12:06:05.123+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connection.py", line 244, in request
+[2026-05-14T12:06:05.123+0000] {subprocess.py:93} INFO -     super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+[2026-05-14T12:06:05.123+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/http/client.py", line 1256, in request
+[2026-05-14T12:06:05.124+0000] {subprocess.py:93} INFO -     self._send_request(method, url, body, headers, encode_chunked)
+[2026-05-14T12:06:05.124+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/http/client.py", line 1302, in _send_request
+[2026-05-14T12:06:05.124+0000] {subprocess.py:93} INFO -     self.endheaders(body, encode_chunked=encode_chunked)
+[2026-05-14T12:06:05.124+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/http/client.py", line 1251, in endheaders
+[2026-05-14T12:06:05.125+0000] {subprocess.py:93} INFO -     self._send_output(message_body, encode_chunked=encode_chunked)
+[2026-05-14T12:06:05.125+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/http/client.py", line 1011, in _send_output
+[2026-05-14T12:06:05.125+0000] {subprocess.py:93} INFO -     self.send(msg)
+[2026-05-14T12:06:05.125+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.8/http/client.py", line 951, in send
+[2026-05-14T12:06:05.125+0000] {subprocess.py:93} INFO -     self.connect()
+[2026-05-14T12:06:05.126+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connection.py", line 205, in connect
+[2026-05-14T12:06:05.126+0000] {subprocess.py:93} INFO -     conn = self._new_conn()
+[2026-05-14T12:06:05.126+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connection.py", line 186, in _new_conn
+[2026-05-14T12:06:05.126+0000] {subprocess.py:93} INFO -     raise NewConnectionError(
+[2026-05-14T12:06:05.126+0000] {subprocess.py:93} INFO - urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0xffffa0e90e50>: Failed to establish a new connection: [Errno 111] Connection refused
+[2026-05-14T12:06:05.126+0000] {subprocess.py:93} INFO - 
+[2026-05-14T12:06:05.127+0000] {subprocess.py:93} INFO - During handling of the above exception, another exception occurred:
+[2026-05-14T12:06:05.127+0000] {subprocess.py:93} INFO - 
+[2026-05-14T12:06:05.127+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2026-05-14T12:06:05.127+0000] {subprocess.py:93} INFO -   File "/opt/airflow/ingestion/kafka_consumer.py", line 106, in <module>
+[2026-05-14T12:06:05.127+0000] {subprocess.py:93} INFO -     consume_events()
+[2026-05-14T12:06:05.127+0000] {subprocess.py:93} INFO -   File "/opt/airflow/ingestion/kafka_consumer.py", line 101, in consume_events
+[2026-05-14T12:06:05.127+0000] {subprocess.py:93} INFO -     write_batch_to_minio(batch, batch_num)
+[2026-05-14T12:06:05.128+0000] {subprocess.py:93} INFO -   File "/opt/airflow/ingestion/kafka_consumer.py", line 70, in write_batch_to_minio
+[2026-05-14T12:06:05.128+0000] {subprocess.py:93} INFO -     minio_client.put_object(
+[2026-05-14T12:06:05.128+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/minio/api.py", line 1930, in put_object
+[2026-05-14T12:06:05.128+0000] {subprocess.py:93} INFO -     raise exc
+[2026-05-14T12:06:05.128+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/minio/api.py", line 1876, in put_object
+[2026-05-14T12:06:05.129+0000] {subprocess.py:93} INFO -     return self._put_object(
+[2026-05-14T12:06:05.129+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/minio/api.py", line 1715, in _put_object
+[2026-05-14T12:06:05.129+0000] {subprocess.py:93} INFO -     response = self._execute(
+[2026-05-14T12:06:05.129+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/minio/api.py", line 437, in _execute
+[2026-05-14T12:06:05.129+0000] {subprocess.py:93} INFO -     region = self._get_region(bucket_name)
+[2026-05-14T12:06:05.129+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/minio/api.py", line 494, in _get_region
+[2026-05-14T12:06:05.129+0000] {subprocess.py:93} INFO -     response = self._url_open(
+[2026-05-14T12:06:05.130+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/minio/api.py", line 302, in _url_open
+[2026-05-14T12:06:05.130+0000] {subprocess.py:93} INFO -     response = self._http.urlopen(
+[2026-05-14T12:06:05.130+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/poolmanager.py", line 376, in urlopen
+[2026-05-14T12:06:05.130+0000] {subprocess.py:93} INFO -     response = conn.urlopen(method, u.request_uri, **kw)
+[2026-05-14T12:06:05.130+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 827, in urlopen
+[2026-05-14T12:06:05.130+0000] {subprocess.py:93} INFO -     return self.urlopen(
+[2026-05-14T12:06:05.131+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 827, in urlopen
+[2026-05-14T12:06:05.131+0000] {subprocess.py:93} INFO -     return self.urlopen(
+[2026-05-14T12:06:05.131+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 827, in urlopen
+[2026-05-14T12:06:05.131+0000] {subprocess.py:93} INFO -     return self.urlopen(
+[2026-05-14T12:06:05.131+0000] {subprocess.py:93} INFO -   [Previous line repeated 2 more times]
+[2026-05-14T12:06:05.131+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 799, in urlopen
+[2026-05-14T12:06:05.131+0000] {subprocess.py:93} INFO -     retries = retries.increment(
+[2026-05-14T12:06:05.132+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 592, in increment
+[2026-05-14T12:06:05.132+0000] {subprocess.py:93} INFO -     raise MaxRetryError(_pool, url, error or ResponseError(cause))
+[2026-05-14T12:06:05.132+0000] {subprocess.py:93} INFO - urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=9000): Max retries exceeded with url: /bronze?location= (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffffa0e90e50>: Failed to establish a new connection: [Errno 111] Connection refused'))
+[2026-05-14T12:06:05.169+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2026-05-14T12:06:05.201+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-05-14T12:06:05.205+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=supply_chain_pipeline, task_id=kafka_consumer, execution_date=20260513T090000, start_date=20260514T120533, end_date=20260514T120605
+[2026-05-14T12:06:05.220+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 30 for task kafka_consumer (Bash command failed. The command returned a non-zero exit code 1.; 209)
+[2026-05-14T12:06:05.253+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-05-14T12:06:05.277+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

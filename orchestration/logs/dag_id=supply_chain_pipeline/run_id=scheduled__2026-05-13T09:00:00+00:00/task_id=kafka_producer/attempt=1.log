@@ -1,0 +1,269 @@
+[2026-05-14T11:00:42.519+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: supply_chain_pipeline.kafka_producer scheduled__2026-05-13T09:00:00+00:00 [queued]>
+[2026-05-14T11:00:42.543+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: supply_chain_pipeline.kafka_producer scheduled__2026-05-13T09:00:00+00:00 [queued]>
+[2026-05-14T11:00:42.545+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2026-05-14T11:00:42.569+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): kafka_producer> on 2026-05-13 09:00:00+00:00
+[2026-05-14T11:00:42.580+0000] {standard_task_runner.py:60} INFO - Started process 175 to run task
+[2026-05-14T11:00:42.586+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'supply_chain_pipeline', 'kafka_producer', 'scheduled__2026-05-13T09:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/supply_chain_pipeline.py', '--cfg-path', '/tmp/tmp2jmqkr01']
+[2026-05-14T11:00:42.592+0000] {standard_task_runner.py:88} INFO - Job 2: Subtask kafka_producer
+[2026-05-14T11:00:42.700+0000] {task_command.py:423} INFO - Running <TaskInstance: supply_chain_pipeline.kafka_producer scheduled__2026-05-13T09:00:00+00:00 [running]> on host 35ffa26b18d6
+[2026-05-14T11:00:42.876+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='lovepreet' AIRFLOW_CTX_DAG_ID='supply_chain_pipeline' AIRFLOW_CTX_TASK_ID='kafka_producer' AIRFLOW_CTX_EXECUTION_DATE='2026-05-13T09:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-13T09:00:00+00:00'
+[2026-05-14T11:00:42.879+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-05-14T11:00:42.884+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /opt/airflow/dags/../../ingestion/kafka_producer.py']
+[2026-05-14T11:00:42.920+0000] {subprocess.py:86} INFO - Output:
+[2026-05-14T11:00:42.969+0000] {subprocess.py:93} INFO - python3: can't open file '/opt/airflow/dags/../../ingestion/kafka_producer.py': [Errno 2] No such file or directory
+[2026-05-14T11:00:42.973+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2026-05-14T11:00:42.989+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2026-05-14T11:00:42.997+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=supply_chain_pipeline, task_id=kafka_producer, execution_date=20260513T090000, start_date=20260514T110042, end_date=20260514T110042
+[2026-05-14T11:00:43.012+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 2 for task kafka_producer (Bash command failed. The command returned a non-zero exit code 2.; 175)
+[2026-05-14T11:00:43.062+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-05-14T11:00:43.116+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-14T11:02:12.993+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: supply_chain_pipeline.kafka_producer scheduled__2026-05-13T09:00:00+00:00 [queued]>
+[2026-05-14T11:02:12.999+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: supply_chain_pipeline.kafka_producer scheduled__2026-05-13T09:00:00+00:00 [queued]>
+[2026-05-14T11:02:12.999+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2026-05-14T11:02:13.007+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): kafka_producer> on 2026-05-13 09:00:00+00:00
+[2026-05-14T11:02:13.011+0000] {standard_task_runner.py:60} INFO - Started process 194 to run task
+[2026-05-14T11:02:13.019+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'supply_chain_pipeline', 'kafka_producer', 'scheduled__2026-05-13T09:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/supply_chain_pipeline.py', '--cfg-path', '/tmp/tmplzxym2r8']
+[2026-05-14T11:02:13.023+0000] {standard_task_runner.py:88} INFO - Job 4: Subtask kafka_producer
+[2026-05-14T11:02:13.061+0000] {task_command.py:423} INFO - Running <TaskInstance: supply_chain_pipeline.kafka_producer scheduled__2026-05-13T09:00:00+00:00 [running]> on host 35ffa26b18d6
+[2026-05-14T11:02:13.114+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='lovepreet' AIRFLOW_CTX_DAG_ID='supply_chain_pipeline' AIRFLOW_CTX_TASK_ID='kafka_producer' AIRFLOW_CTX_EXECUTION_DATE='2026-05-13T09:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-13T09:00:00+00:00'
+[2026-05-14T11:02:13.115+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-05-14T11:02:13.115+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /opt/airflow/dags/../../ingestion/kafka_producer.py']
+[2026-05-14T11:02:13.120+0000] {subprocess.py:86} INFO - Output:
+[2026-05-14T11:02:13.141+0000] {subprocess.py:93} INFO - python3: can't open file '/opt/airflow/dags/../../ingestion/kafka_producer.py': [Errno 2] No such file or directory
+[2026-05-14T11:02:13.143+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2026-05-14T11:02:13.151+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2026-05-14T11:02:13.155+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=supply_chain_pipeline, task_id=kafka_producer, execution_date=20260513T090000, start_date=20260514T110212, end_date=20260514T110213
+[2026-05-14T11:02:13.161+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 4 for task kafka_producer (Bash command failed. The command returned a non-zero exit code 2.; 194)
+[2026-05-14T11:02:13.203+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-05-14T11:02:13.218+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-14T11:03:13.668+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: supply_chain_pipeline.kafka_producer scheduled__2026-05-13T09:00:00+00:00 [queued]>
+[2026-05-14T11:03:13.674+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: supply_chain_pipeline.kafka_producer scheduled__2026-05-13T09:00:00+00:00 [queued]>
+[2026-05-14T11:03:13.674+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2026-05-14T11:03:13.681+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): kafka_producer> on 2026-05-13 09:00:00+00:00
+[2026-05-14T11:03:13.684+0000] {standard_task_runner.py:60} INFO - Started process 207 to run task
+[2026-05-14T11:03:13.686+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'supply_chain_pipeline', 'kafka_producer', 'scheduled__2026-05-13T09:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/supply_chain_pipeline.py', '--cfg-path', '/tmp/tmp1mk21v6q']
+[2026-05-14T11:03:13.688+0000] {standard_task_runner.py:88} INFO - Job 5: Subtask kafka_producer
+[2026-05-14T11:03:13.719+0000] {task_command.py:423} INFO - Running <TaskInstance: supply_chain_pipeline.kafka_producer scheduled__2026-05-13T09:00:00+00:00 [running]> on host 35ffa26b18d6
+[2026-05-14T11:03:13.766+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='lovepreet' AIRFLOW_CTX_DAG_ID='supply_chain_pipeline' AIRFLOW_CTX_TASK_ID='kafka_producer' AIRFLOW_CTX_EXECUTION_DATE='2026-05-13T09:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-13T09:00:00+00:00'
+[2026-05-14T11:03:13.767+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-05-14T11:03:13.768+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /opt/airflow/dags/../../ingestion/kafka_producer.py']
+[2026-05-14T11:03:13.772+0000] {subprocess.py:86} INFO - Output:
+[2026-05-14T11:03:13.789+0000] {subprocess.py:93} INFO - python3: can't open file '/opt/airflow/dags/../../ingestion/kafka_producer.py': [Errno 2] No such file or directory
+[2026-05-14T11:03:13.791+0000] {subprocess.py:97} INFO - Command exited with return code 2
+[2026-05-14T11:03:13.799+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2026-05-14T11:03:13.802+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=supply_chain_pipeline, task_id=kafka_producer, execution_date=20260513T090000, start_date=20260514T110313, end_date=20260514T110313
+[2026-05-14T11:03:13.808+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 5 for task kafka_producer (Bash command failed. The command returned a non-zero exit code 2.; 207)
+[2026-05-14T11:03:13.826+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-05-14T11:03:13.842+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-14T11:36:04.244+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: supply_chain_pipeline.kafka_producer scheduled__2026-05-13T09:00:00+00:00 [queued]>
+[2026-05-14T11:36:04.254+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: supply_chain_pipeline.kafka_producer scheduled__2026-05-13T09:00:00+00:00 [queued]>
+[2026-05-14T11:36:04.254+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2026-05-14T11:36:04.266+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): kafka_producer> on 2026-05-13 09:00:00+00:00
+[2026-05-14T11:36:04.270+0000] {standard_task_runner.py:60} INFO - Started process 258 to run task
+[2026-05-14T11:36:04.274+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'supply_chain_pipeline', 'kafka_producer', 'scheduled__2026-05-13T09:00:00+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/supply_chain_pipeline.py', '--cfg-path', '/tmp/tmpvgpoyo72']
+[2026-05-14T11:36:04.276+0000] {standard_task_runner.py:88} INFO - Job 15: Subtask kafka_producer
+[2026-05-14T11:36:04.320+0000] {task_command.py:423} INFO - Running <TaskInstance: supply_chain_pipeline.kafka_producer scheduled__2026-05-13T09:00:00+00:00 [running]> on host e68afba521da
+[2026-05-14T11:36:04.381+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='lovepreet' AIRFLOW_CTX_DAG_ID='supply_chain_pipeline' AIRFLOW_CTX_TASK_ID='kafka_producer' AIRFLOW_CTX_EXECUTION_DATE='2026-05-13T09:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-13T09:00:00+00:00'
+[2026-05-14T11:36:04.382+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-05-14T11:36:04.384+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /opt/airflow/ingestion/kafka_producer.py']
+[2026-05-14T11:36:04.390+0000] {subprocess.py:86} INFO - Output:
+[2026-05-14T11:36:06.657+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2026-05-14T11:36:06.659+0000] {subprocess.py:93} INFO -   File "/opt/airflow/ingestion/kafka_producer.py", line 28, in <module>
+[2026-05-14T11:36:06.660+0000] {subprocess.py:93} INFO -     producer = KafkaProducer(
+[2026-05-14T11:36:06.661+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/kafka/producer/kafka.py", line 485, in __init__
+[2026-05-14T11:36:06.663+0000] {subprocess.py:93} INFO -     client = self.config['kafka_client'](
+[2026-05-14T11:36:06.664+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/kafka/client_async.py", line 262, in __init__
+[2026-05-14T11:36:06.664+0000] {subprocess.py:93} INFO -     self.config['api_version'] = self.check_version()
+[2026-05-14T11:36:06.665+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/kafka/client_async.py", line 1076, in check_version
+[2026-05-14T11:36:06.665+0000] {subprocess.py:93} INFO -     raise Errors.NoBrokersAvailable()
+[2026-05-14T11:36:06.665+0000] {subprocess.py:93} INFO - kafka.errors.NoBrokersAvailable: NoBrokersAvailable
+[2026-05-14T11:36:06.700+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2026-05-14T11:36:06.712+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-05-14T11:36:06.714+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=supply_chain_pipeline, task_id=kafka_producer, execution_date=20260513T090000, start_date=20260514T113604, end_date=20260514T113606
+[2026-05-14T11:36:06.723+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 15 for task kafka_producer (Bash command failed. The command returned a non-zero exit code 1.; 258)
+[2026-05-14T11:36:06.752+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-05-14T11:36:06.777+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-14T11:46:34.275+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: supply_chain_pipeline.kafka_producer scheduled__2026-05-13T09:00:00+00:00 [queued]>
+[2026-05-14T11:46:34.282+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: supply_chain_pipeline.kafka_producer scheduled__2026-05-13T09:00:00+00:00 [queued]>
+[2026-05-14T11:46:34.283+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2026-05-14T11:46:34.293+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): kafka_producer> on 2026-05-13 09:00:00+00:00
+[2026-05-14T11:46:34.297+0000] {standard_task_runner.py:60} INFO - Started process 391 to run task
+[2026-05-14T11:46:34.299+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'supply_chain_pipeline', 'kafka_producer', 'scheduled__2026-05-13T09:00:00+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/supply_chain_pipeline.py', '--cfg-path', '/tmp/tmphdg0v4qk']
+[2026-05-14T11:46:34.301+0000] {standard_task_runner.py:88} INFO - Job 21: Subtask kafka_producer
+[2026-05-14T11:46:34.343+0000] {task_command.py:423} INFO - Running <TaskInstance: supply_chain_pipeline.kafka_producer scheduled__2026-05-13T09:00:00+00:00 [running]> on host e68afba521da
+[2026-05-14T11:46:34.405+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='lovepreet' AIRFLOW_CTX_DAG_ID='supply_chain_pipeline' AIRFLOW_CTX_TASK_ID='kafka_producer' AIRFLOW_CTX_EXECUTION_DATE='2026-05-13T09:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-13T09:00:00+00:00'
+[2026-05-14T11:46:34.406+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-05-14T11:46:34.407+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /opt/airflow/ingestion/kafka_producer.py']
+[2026-05-14T11:46:34.412+0000] {subprocess.py:86} INFO - Output:
+[2026-05-14T11:47:34.626+0000] {subprocess.py:93} INFO - Starting shipment event producer...
+[2026-05-14T11:47:34.634+0000] {subprocess.py:93} INFO - Sending to topic: shipment-events
+[2026-05-14T11:47:34.634+0000] {subprocess.py:93} INFO - Broker: kafka:9092
+[2026-05-14T11:47:34.635+0000] {subprocess.py:93} INFO - 
+[2026-05-14T11:47:34.635+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2026-05-14T11:47:34.636+0000] {subprocess.py:93} INFO -   File "/opt/airflow/ingestion/kafka_producer.py", line 96, in <module>
+[2026-05-14T11:47:34.637+0000] {subprocess.py:93} INFO -     send_events(num_events=100, delay_seconds=1)
+[2026-05-14T11:47:34.637+0000] {subprocess.py:93} INFO -   File "/opt/airflow/ingestion/kafka_producer.py", line 80, in send_events
+[2026-05-14T11:47:34.638+0000] {subprocess.py:93} INFO -     producer.send(
+[2026-05-14T11:47:34.638+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/kafka/producer/kafka.py", line 844, in send
+[2026-05-14T11:47:34.639+0000] {subprocess.py:93} INFO -     self._wait_on_metadata(topic, timer.timeout_ms)
+[2026-05-14T11:47:34.639+0000] {subprocess.py:93} INFO -   File "/home/airflow/.local/lib/python3.8/site-packages/kafka/producer/kafka.py", line 968, in _wait_on_metadata
+[2026-05-14T11:47:34.639+0000] {subprocess.py:93} INFO -     raise Errors.KafkaTimeoutError(
+[2026-05-14T11:47:34.640+0000] {subprocess.py:93} INFO - kafka.errors.KafkaTimeoutError: KafkaTimeoutError: Failed to update metadata after 60.0 secs.
+[2026-05-14T11:47:34.697+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2026-05-14T11:47:34.737+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-05-14T11:47:34.741+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=supply_chain_pipeline, task_id=kafka_producer, execution_date=20260513T090000, start_date=20260514T114634, end_date=20260514T114734
+[2026-05-14T11:47:34.756+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 21 for task kafka_producer (Bash command failed. The command returned a non-zero exit code 1.; 391)
+[2026-05-14T11:47:34.786+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-05-14T11:47:34.826+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-05-14T12:03:51.926+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: supply_chain_pipeline.kafka_producer scheduled__2026-05-13T09:00:00+00:00 [queued]>
+[2026-05-14T12:03:51.936+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: supply_chain_pipeline.kafka_producer scheduled__2026-05-13T09:00:00+00:00 [queued]>
+[2026-05-14T12:03:51.937+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 3
+[2026-05-14T12:03:51.948+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): kafka_producer> on 2026-05-13 09:00:00+00:00
+[2026-05-14T12:03:51.953+0000] {standard_task_runner.py:60} INFO - Started process 184 to run task
+[2026-05-14T12:03:51.956+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'supply_chain_pipeline', 'kafka_producer', 'scheduled__2026-05-13T09:00:00+00:00', '--job-id', '29', '--raw', '--subdir', 'DAGS_FOLDER/supply_chain_pipeline.py', '--cfg-path', '/tmp/tmp2m_2wp23']
+[2026-05-14T12:03:51.958+0000] {standard_task_runner.py:88} INFO - Job 29: Subtask kafka_producer
+[2026-05-14T12:03:51.998+0000] {task_command.py:423} INFO - Running <TaskInstance: supply_chain_pipeline.kafka_producer scheduled__2026-05-13T09:00:00+00:00 [running]> on host 25ee09023a37
+[2026-05-14T12:03:52.065+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='lovepreet' AIRFLOW_CTX_DAG_ID='supply_chain_pipeline' AIRFLOW_CTX_TASK_ID='kafka_producer' AIRFLOW_CTX_EXECUTION_DATE='2026-05-13T09:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-13T09:00:00+00:00'
+[2026-05-14T12:03:52.066+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-05-14T12:03:52.067+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /opt/airflow/ingestion/kafka_producer.py']
+[2026-05-14T12:03:52.080+0000] {subprocess.py:86} INFO - Output:
+[2026-05-14T12:05:33.282+0000] {subprocess.py:93} INFO - Starting shipment event producer...
+[2026-05-14T12:05:33.288+0000] {subprocess.py:93} INFO - Sending to topic: shipment-events
+[2026-05-14T12:05:33.288+0000] {subprocess.py:93} INFO - Broker: kafka:9092
+[2026-05-14T12:05:33.289+0000] {subprocess.py:93} INFO - 
+[2026-05-14T12:05:33.289+0000] {subprocess.py:93} INFO - [1/100] Sent: Order 8061 | Tablet | PROCESSING | DHL → Lucknow
+[2026-05-14T12:05:33.290+0000] {subprocess.py:93} INFO - [2/100] Sent: Order 4648 | Laptop | DELIVERED | DTDC → Ahmedabad
+[2026-05-14T12:05:33.290+0000] {subprocess.py:93} INFO - [3/100] Sent: Order 3123 | Laptop | DELIVERED | Blue Dart → Pune
+[2026-05-14T12:05:33.290+0000] {subprocess.py:93} INFO - [4/100] Sent: Order 7324 | Tablet | SHIPPED | DHL → Kolkata
+[2026-05-14T12:05:33.291+0000] {subprocess.py:93} INFO - [5/100] Sent: Order 7059 | Camera | PROCESSING | Blue Dart → Ahmedabad
+[2026-05-14T12:05:33.291+0000] {subprocess.py:93} INFO - [6/100] Sent: Order 5293 | Monitor | OUT_FOR_DELIVERY | Blue Dart → Pune
+[2026-05-14T12:05:33.291+0000] {subprocess.py:93} INFO - [7/100] Sent: Order 1423 | Phone | DELIVERED | DTDC → Pune
+[2026-05-14T12:05:33.292+0000] {subprocess.py:93} INFO - [8/100] Sent: Order 6031 | Headphones | IN_TRANSIT | FedEx → Kolkata
+[2026-05-14T12:05:33.292+0000] {subprocess.py:93} INFO - [9/100] Sent: Order 5266 | Laptop | DELIVERED | Delhivery → Ahmedabad
+[2026-05-14T12:05:33.292+0000] {subprocess.py:93} INFO - [10/100] Sent: Order 7616 | Camera | PROCESSING | FedEx → Lucknow
+[2026-05-14T12:05:33.293+0000] {subprocess.py:93} INFO - [11/100] Sent: Order 2267 | Phone | SHIPPED | Delhivery → Lucknow
+[2026-05-14T12:05:33.293+0000] {subprocess.py:93} INFO - [12/100] Sent: Order 3907 | Laptop | IN_TRANSIT | DTDC → Kolkata
+[2026-05-14T12:05:33.293+0000] {subprocess.py:93} INFO - [13/100] Sent: Order 7220 | Laptop | DELIVERED | FedEx → Ahmedabad
+[2026-05-14T12:05:33.294+0000] {subprocess.py:93} INFO - [14/100] Sent: Order 2232 | Camera | SHIPPED | Blue Dart → Lucknow
+[2026-05-14T12:05:33.294+0000] {subprocess.py:93} INFO - [15/100] Sent: Order 9013 | Keyboard | IN_TRANSIT | DHL → Ahmedabad
+[2026-05-14T12:05:33.294+0000] {subprocess.py:93} INFO - [16/100] Sent: Order 7199 | Laptop | PROCESSING | Delhivery → Pune
+[2026-05-14T12:05:33.295+0000] {subprocess.py:93} INFO - [17/100] Sent: Order 3218 | Keyboard | PROCESSING | DHL → Lucknow
+[2026-05-14T12:05:33.295+0000] {subprocess.py:93} INFO - [18/100] Sent: Order 3799 | Monitor | DELAYED | Blue Dart → Jaipur
+[2026-05-14T12:05:33.295+0000] {subprocess.py:93} INFO - [19/100] Sent: Order 7441 | Keyboard | PROCESSING | Blue Dart → Lucknow
+[2026-05-14T12:05:33.296+0000] {subprocess.py:93} INFO - [20/100] Sent: Order 2981 | Tablet | DELIVERED | Delhivery → Lucknow
+[2026-05-14T12:05:33.296+0000] {subprocess.py:93} INFO - [21/100] Sent: Order 8643 | Headphones | DELAYED | DTDC → Pune
+[2026-05-14T12:05:33.296+0000] {subprocess.py:93} INFO - [22/100] Sent: Order 1954 | Monitor | SHIPPED | Blue Dart → Pune
+[2026-05-14T12:05:33.297+0000] {subprocess.py:93} INFO - [23/100] Sent: Order 7826 | Monitor | PROCESSING | Blue Dart → Lucknow
+[2026-05-14T12:05:33.297+0000] {subprocess.py:93} INFO - [24/100] Sent: Order 1516 | Tablet | SHIPPED | DTDC → Ahmedabad
+[2026-05-14T12:05:33.297+0000] {subprocess.py:93} INFO - [25/100] Sent: Order 4427 | Phone | PROCESSING | Delhivery → Jaipur
+[2026-05-14T12:05:33.297+0000] {subprocess.py:93} INFO - [26/100] Sent: Order 1464 | Headphones | PROCESSING | DTDC → Lucknow
+[2026-05-14T12:05:33.298+0000] {subprocess.py:93} INFO - [27/100] Sent: Order 7041 | Headphones | DELAYED | FedEx → Lucknow
+[2026-05-14T12:05:33.298+0000] {subprocess.py:93} INFO - [28/100] Sent: Order 8024 | Headphones | IN_TRANSIT | DHL → Ahmedabad
+[2026-05-14T12:05:33.298+0000] {subprocess.py:93} INFO - [29/100] Sent: Order 3827 | Headphones | IN_TRANSIT | DTDC → Pune
+[2026-05-14T12:05:33.299+0000] {subprocess.py:93} INFO - [30/100] Sent: Order 4072 | Phone | SHIPPED | DHL → Jaipur
+[2026-05-14T12:05:33.299+0000] {subprocess.py:93} INFO - [31/100] Sent: Order 5993 | Keyboard | OUT_FOR_DELIVERY | DHL → Kolkata
+[2026-05-14T12:05:33.299+0000] {subprocess.py:93} INFO - [32/100] Sent: Order 7468 | Tablet | DELAYED | Delhivery → Jaipur
+[2026-05-14T12:05:33.299+0000] {subprocess.py:93} INFO - [33/100] Sent: Order 5997 | Keyboard | IN_TRANSIT | Blue Dart → Kolkata
+[2026-05-14T12:05:33.300+0000] {subprocess.py:93} INFO - [34/100] Sent: Order 9807 | Monitor | IN_TRANSIT | DHL → Ahmedabad
+[2026-05-14T12:05:33.300+0000] {subprocess.py:93} INFO - [35/100] Sent: Order 9365 | Tablet | ORDER_PLACED | Blue Dart → Kolkata
+[2026-05-14T12:05:33.300+0000] {subprocess.py:93} INFO - [36/100] Sent: Order 4955 | Tablet | PROCESSING | DTDC → Jaipur
+[2026-05-14T12:05:33.300+0000] {subprocess.py:93} INFO - [37/100] Sent: Order 5013 | Keyboard | PROCESSING | DHL → Pune
+[2026-05-14T12:05:33.301+0000] {subprocess.py:93} INFO - [38/100] Sent: Order 5797 | Monitor | IN_TRANSIT | Delhivery → Pune
+[2026-05-14T12:05:33.301+0000] {subprocess.py:93} INFO - [39/100] Sent: Order 4719 | Headphones | DELAYED | DTDC → Kolkata
+[2026-05-14T12:05:33.301+0000] {subprocess.py:93} INFO - [40/100] Sent: Order 7090 | Phone | IN_TRANSIT | DHL → Lucknow
+[2026-05-14T12:05:33.301+0000] {subprocess.py:93} INFO - [41/100] Sent: Order 2718 | Laptop | DELIVERED | DTDC → Ahmedabad
+[2026-05-14T12:05:33.302+0000] {subprocess.py:93} INFO - [42/100] Sent: Order 5028 | Phone | SHIPPED | Delhivery → Jaipur
+[2026-05-14T12:05:33.302+0000] {subprocess.py:93} INFO - [43/100] Sent: Order 6053 | Camera | OUT_FOR_DELIVERY | FedEx → Jaipur
+[2026-05-14T12:05:33.302+0000] {subprocess.py:93} INFO - [44/100] Sent: Order 1745 | Phone | DELAYED | Blue Dart → Ahmedabad
+[2026-05-14T12:05:33.302+0000] {subprocess.py:93} INFO - [45/100] Sent: Order 7635 | Phone | DELIVERED | DTDC → Lucknow
+[2026-05-14T12:05:33.302+0000] {subprocess.py:93} INFO - [46/100] Sent: Order 4579 | Laptop | IN_TRANSIT | Delhivery → Pune
+[2026-05-14T12:05:33.302+0000] {subprocess.py:93} INFO - [47/100] Sent: Order 7040 | Tablet | PROCESSING | DTDC → Jaipur
+[2026-05-14T12:05:33.303+0000] {subprocess.py:93} INFO - [48/100] Sent: Order 4715 | Tablet | ORDER_PLACED | Delhivery → Jaipur
+[2026-05-14T12:05:33.303+0000] {subprocess.py:93} INFO - [49/100] Sent: Order 9731 | Headphones | DELIVERED | Blue Dart → Ahmedabad
+[2026-05-14T12:05:33.303+0000] {subprocess.py:93} INFO - [50/100] Sent: Order 4620 | Laptop | OUT_FOR_DELIVERY | Blue Dart → Kolkata
+[2026-05-14T12:05:33.303+0000] {subprocess.py:93} INFO - [51/100] Sent: Order 6522 | Phone | SHIPPED | DHL → Jaipur
+[2026-05-14T12:05:33.303+0000] {subprocess.py:93} INFO - [52/100] Sent: Order 2054 | Headphones | OUT_FOR_DELIVERY | DTDC → Pune
+[2026-05-14T12:05:33.304+0000] {subprocess.py:93} INFO - [53/100] Sent: Order 1751 | Headphones | PROCESSING | DTDC → Jaipur
+[2026-05-14T12:05:33.304+0000] {subprocess.py:93} INFO - [54/100] Sent: Order 8930 | Tablet | PROCESSING | Blue Dart → Ahmedabad
+[2026-05-14T12:05:33.304+0000] {subprocess.py:93} INFO - [55/100] Sent: Order 4333 | Monitor | SHIPPED | FedEx → Jaipur
+[2026-05-14T12:05:33.304+0000] {subprocess.py:93} INFO - [56/100] Sent: Order 8336 | Phone | DELAYED | FedEx → Jaipur
+[2026-05-14T12:05:33.305+0000] {subprocess.py:93} INFO - [57/100] Sent: Order 3936 | Laptop | IN_TRANSIT | FedEx → Kolkata
+[2026-05-14T12:05:33.305+0000] {subprocess.py:93} INFO - [58/100] Sent: Order 6066 | Tablet | IN_TRANSIT | DHL → Jaipur
+[2026-05-14T12:05:33.305+0000] {subprocess.py:93} INFO - [59/100] Sent: Order 5592 | Phone | PROCESSING | DTDC → Pune
+[2026-05-14T12:05:33.305+0000] {subprocess.py:93} INFO - [60/100] Sent: Order 6773 | Phone | DELIVERED | DHL → Jaipur
+[2026-05-14T12:05:33.305+0000] {subprocess.py:93} INFO - [61/100] Sent: Order 3032 | Keyboard | ORDER_PLACED | DHL → Kolkata
+[2026-05-14T12:05:33.306+0000] {subprocess.py:93} INFO - [62/100] Sent: Order 4369 | Monitor | DELAYED | DHL → Ahmedabad
+[2026-05-14T12:05:33.306+0000] {subprocess.py:93} INFO - [63/100] Sent: Order 8895 | Phone | SHIPPED | Blue Dart → Ahmedabad
+[2026-05-14T12:05:33.306+0000] {subprocess.py:93} INFO - [64/100] Sent: Order 7039 | Keyboard | ORDER_PLACED | FedEx → Jaipur
+[2026-05-14T12:05:33.306+0000] {subprocess.py:93} INFO - [65/100] Sent: Order 7902 | Camera | DELAYED | Delhivery → Kolkata
+[2026-05-14T12:05:33.306+0000] {subprocess.py:93} INFO - [66/100] Sent: Order 4153 | Monitor | DELAYED | Blue Dart → Lucknow
+[2026-05-14T12:05:33.307+0000] {subprocess.py:93} INFO - [67/100] Sent: Order 4505 | Headphones | PROCESSING | Delhivery → Ahmedabad
+[2026-05-14T12:05:33.307+0000] {subprocess.py:93} INFO - [68/100] Sent: Order 6040 | Headphones | OUT_FOR_DELIVERY | DHL → Lucknow
+[2026-05-14T12:05:33.307+0000] {subprocess.py:93} INFO - [69/100] Sent: Order 1257 | Headphones | IN_TRANSIT | FedEx → Jaipur
+[2026-05-14T12:05:33.307+0000] {subprocess.py:93} INFO - [70/100] Sent: Order 8005 | Tablet | PROCESSING | DTDC → Lucknow
+[2026-05-14T12:05:33.307+0000] {subprocess.py:93} INFO - [71/100] Sent: Order 1404 | Laptop | IN_TRANSIT | Delhivery → Lucknow
+[2026-05-14T12:05:33.308+0000] {subprocess.py:93} INFO - [72/100] Sent: Order 6084 | Keyboard | OUT_FOR_DELIVERY | Delhivery → Ahmedabad
+[2026-05-14T12:05:33.308+0000] {subprocess.py:93} INFO - [73/100] Sent: Order 1186 | Phone | DELAYED | Delhivery → Lucknow
+[2026-05-14T12:05:33.308+0000] {subprocess.py:93} INFO - [74/100] Sent: Order 8965 | Headphones | OUT_FOR_DELIVERY | DHL → Pune
+[2026-05-14T12:05:33.308+0000] {subprocess.py:93} INFO - [75/100] Sent: Order 1169 | Monitor | DELAYED | DTDC → Jaipur
+[2026-05-14T12:05:33.309+0000] {subprocess.py:93} INFO - [76/100] Sent: Order 5702 | Laptop | SHIPPED | FedEx → Pune
+[2026-05-14T12:05:33.309+0000] {subprocess.py:93} INFO - [77/100] Sent: Order 8677 | Camera | SHIPPED | Delhivery → Pune
+[2026-05-14T12:05:33.309+0000] {subprocess.py:93} INFO - [78/100] Sent: Order 6899 | Camera | IN_TRANSIT | DTDC → Jaipur
+[2026-05-14T12:05:33.309+0000] {subprocess.py:93} INFO - [79/100] Sent: Order 9741 | Headphones | PROCESSING | DTDC → Kolkata
+[2026-05-14T12:05:33.309+0000] {subprocess.py:93} INFO - [80/100] Sent: Order 2128 | Keyboard | ORDER_PLACED | DHL → Lucknow
+[2026-05-14T12:05:33.310+0000] {subprocess.py:93} INFO - [81/100] Sent: Order 3184 | Laptop | PROCESSING | Delhivery → Pune
+[2026-05-14T12:05:33.310+0000] {subprocess.py:93} INFO - [82/100] Sent: Order 5376 | Laptop | DELAYED | Delhivery → Ahmedabad
+[2026-05-14T12:05:33.310+0000] {subprocess.py:93} INFO - [83/100] Sent: Order 8256 | Monitor | IN_TRANSIT | DHL → Kolkata
+[2026-05-14T12:05:33.310+0000] {subprocess.py:93} INFO - [84/100] Sent: Order 4862 | Headphones | ORDER_PLACED | FedEx → Ahmedabad
+[2026-05-14T12:05:33.311+0000] {subprocess.py:93} INFO - [85/100] Sent: Order 6762 | Phone | DELIVERED | DTDC → Kolkata
+[2026-05-14T12:05:33.311+0000] {subprocess.py:93} INFO - [86/100] Sent: Order 5969 | Headphones | ORDER_PLACED | DTDC → Kolkata
+[2026-05-14T12:05:33.311+0000] {subprocess.py:93} INFO - [87/100] Sent: Order 7093 | Headphones | OUT_FOR_DELIVERY | Blue Dart → Ahmedabad
+[2026-05-14T12:05:33.311+0000] {subprocess.py:93} INFO - [88/100] Sent: Order 2743 | Keyboard | SHIPPED | FedEx → Jaipur
+[2026-05-14T12:05:33.312+0000] {subprocess.py:93} INFO - [89/100] Sent: Order 4426 | Phone | SHIPPED | Delhivery → Pune
+[2026-05-14T12:05:33.312+0000] {subprocess.py:93} INFO - [90/100] Sent: Order 8725 | Monitor | ORDER_PLACED | DHL → Pune
+[2026-05-14T12:05:33.312+0000] {subprocess.py:93} INFO - [91/100] Sent: Order 2766 | Monitor | SHIPPED | Blue Dart → Pune
+[2026-05-14T12:05:33.312+0000] {subprocess.py:93} INFO - [92/100] Sent: Order 3012 | Laptop | PROCESSING | FedEx → Jaipur
+[2026-05-14T12:05:33.312+0000] {subprocess.py:93} INFO - [93/100] Sent: Order 7763 | Camera | SHIPPED | DHL → Lucknow
+[2026-05-14T12:05:33.313+0000] {subprocess.py:93} INFO - [94/100] Sent: Order 7974 | Keyboard | DELIVERED | Delhivery → Ahmedabad
+[2026-05-14T12:05:33.313+0000] {subprocess.py:93} INFO - [95/100] Sent: Order 9064 | Keyboard | PROCESSING | DTDC → Ahmedabad
+[2026-05-14T12:05:33.313+0000] {subprocess.py:93} INFO - [96/100] Sent: Order 7590 | Camera | IN_TRANSIT | FedEx → Ahmedabad
+[2026-05-14T12:05:33.313+0000] {subprocess.py:93} INFO - [97/100] Sent: Order 7260 | Phone | OUT_FOR_DELIVERY | FedEx → Kolkata
+[2026-05-14T12:05:33.313+0000] {subprocess.py:93} INFO - [98/100] Sent: Order 6703 | Monitor | IN_TRANSIT | Delhivery → Kolkata
+[2026-05-14T12:05:33.314+0000] {subprocess.py:93} INFO - [99/100] Sent: Order 6666 | Keyboard | SHIPPED | DHL → Lucknow
+[2026-05-14T12:05:33.314+0000] {subprocess.py:93} INFO - [100/100] Sent: Order 8629 | Keyboard | OUT_FOR_DELIVERY | Blue Dart → Kolkata
+[2026-05-14T12:05:33.314+0000] {subprocess.py:93} INFO - 
+[2026-05-14T12:05:33.314+0000] {subprocess.py:93} INFO - All events sent successfully!
+[2026-05-14T12:05:33.346+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-05-14T12:05:33.384+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=supply_chain_pipeline, task_id=kafka_producer, execution_date=20260513T090000, start_date=20260514T120351, end_date=20260514T120533
+[2026-05-14T12:05:33.400+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-05-14T12:05:33.428+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
