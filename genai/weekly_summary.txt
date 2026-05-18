@@ -1,0 +1,31 @@
+SUPPLY CHAIN WEEKLY INSIGHTS
+============================================================
+
+**Weekly Supply Chain Executive Summary**
+
+**Overall Performance Overview:**
+The supply chain has experienced some delays, with 21 out of 76 shipments delayed. The delay rate stands at approximately 27.5%. While this is higher than desired, it's essential to focus on improving carrier performance and optimizing routes.
+
+**Top Performing Carrier:**
+Blue Dart has emerged as the top-performing carrier, with a delay rate of just 16.67% and an average weight of 26.02 kg per shipment. Their strong performance warrants continued collaboration and potential consideration for more volume allocation.
+
+**Most Problematic Carrier and Recommendation:**
+Delhivery's delay rate stands at 27.27%, which is concerning given their relatively high volume (22 shipments). To address this, it may be beneficial to work closely with Delhivery's team to identify and rectify the root causes of these delays. Consider implementing a performance-based incentive structure to motivate improvements.
+
+**Most Delayed Route and Suggested Action:**
+The Delhi → Pune route has experienced a delay rate of 50.0%. To mitigate this, consider rerouting some shipments through alternative routes or collaborating with Delhivery to optimize their operations on this specific route.
+
+**Top Shipped Product:**
+Phone shipments have topped the list at 26, with a relatively low delay rate of 15.38%. It's essential to maintain focus on these critical products and ensure that supply chain processes are optimized to meet demand.
+
+**Key Recommendation for Next Week:**
+Focus on improving Delhivery's performance through collaborative efforts and potential process improvements. Continue monitoring the Delhi → Pune route and explore alternative solutions if necessary. Prioritize phone shipments and ensure that supply chain processes are optimized to meet customer demands.
+
+**Next Steps:**
+
+1. Work closely with Delhivery's team to identify and rectify delay causes.
+2. Reroute or optimize operations on the Delhi → Pune route.
+3. Continue monitoring and optimizing phone shipment processes.
+4. Review and adjust carrier performance-based incentives as needed.
+
+This summary provides a comprehensive overview of supply chain performance, highlighting areas for improvement and opportunities for growth. By focusing on these key areas, we can drive increased efficiency, reduce delays, and ultimately enhance customer satisfaction.
